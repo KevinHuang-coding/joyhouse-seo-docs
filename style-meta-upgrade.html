@@ -2,302 +2,354 @@
 <html lang="zh-TW">
 <head>
 <meta charset="UTF-8">
-<title>滿屋設計｜22 風格分類頁 Meta 升級清單</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>風格 Meta 清單審閱｜滿屋設計 SEO 平台</title>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: "Microsoft JhengHei", "PingFang TC", "Noto Sans CJK TC", sans-serif;
-    font-size: 14px;
-    line-height: 1.8;
-    color: #333;
-    background: #fff;
-    padding: 40px 60px;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  h1 {
-    font-size: 22px;
-    color: #2c2c2c;
-    border-bottom: 3px solid #c8a96e;
-    padding-bottom: 12px;
-    margin-bottom: 20px;
-  }
-  h2 {
-    font-size: 16px;
-    color: #fff;
-    background: #7a5c2e;
-    padding: 8px 16px;
-    margin: 32px 0 14px;
-    border-radius: 3px;
-    page-break-after: avoid;
-  }
-  h3 {
-    font-size: 15px;
-    color: #7a5c2e;
-    background: #fdf6ec;
-    border-left: 4px solid #c8a96e;
-    padding: 8px 14px;
-    margin: 22px 0 10px;
-    page-break-after: avoid;
-  }
-  .tag-line {
-    font-size: 11px;
-    color: #888;
-    margin-bottom: 3px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-  .meta-box {
-    background: #f7f7f7;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 9px 13px;
-    font-size: 13px;
-    margin-bottom: 10px;
-    white-space: pre-wrap;
-    word-break: break-all;
-  }
-  .kw-line {
-    font-size: 12px;
-    color: #666;
-    background: #eef6ff;
-    border: 1px solid #b3d4f5;
-    border-radius: 4px;
-    padding: 6px 12px;
-    margin-bottom: 8px;
-  }
-  .intro {
-    background: #fdf6ec;
-    border: 1px solid #e0c897;
-    border-radius: 6px;
-    padding: 14px 18px;
-    margin-bottom: 28px;
-    font-size: 13px;
-    color: #5a4020;
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 16px 0;
-    font-size: 13px;
-  }
-  th {
-    background: #7a5c2e;
-    color: white;
-    padding: 8px 12px;
-    text-align: left;
-  }
-  td {
-    padding: 7px 12px;
-    border-bottom: 1px solid #eee;
-    vertical-align: top;
-  }
-  tr:nth-child(even) td { background: #fdf6ec; }
-  .p1 { color: #c0392b; font-weight: bold; }
-  .p2 { color: #e67e22; font-weight: bold; }
-  .p3 { color: #27ae60; font-weight: bold; }
-  .section-note {
-    font-size: 12px;
-    color: #888;
-    font-style: italic;
-    margin-bottom: 6px;
-  }
-  hr { border: none; border-top: 1px solid #eee; margin: 24px 0; }
-  @media print {
-    body { padding: 20px 30px; }
-    h2 { page-break-before: always; }
-    h2:first-of-type { page-break-before: avoid; }
-  }
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--gold:#c8a96e;--dark:#2c2c2c;--bg:#faf8f5;--border:#e8e0d5;--r:10px;--pending:#c62828;--pending-bg:#fce4ec;--approved:#2e7d32;--approved-bg:#e8f5e9;--revision:#e65100;--revision-bg:#fff3e0;--deployed:#1565c0;--deployed-bg:#e3f2fd}
+body{font-family:"Microsoft JhengHei","PingFang TC",sans-serif;background:var(--bg);color:#333;font-size:14px;min-height:100vh}
+.hdr{background:#2c2c2c;color:#fff;padding:0 24px;height:56px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+.hdr-logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff}
+.hdr-logo .badge{width:34px;height:34px;background:var(--gold);border-radius:7px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;flex-shrink:0}
+.hdr-logo span{font-size:14px;font-weight:600}
+.nav{display:flex;gap:4px;margin-left:16px}
+.nav a{color:#bbb;text-decoration:none;padding:6px 12px;border-radius:6px;font-size:13px;transition:all .2s;white-space:nowrap}
+.nav a:hover,.nav a.active{background:rgba(255,255,255,.12);color:#fff}
+.hdr-r{margin-left:auto;display:flex;align-items:center;gap:10px}
+.ubadge{background:rgba(200,169,110,.2);border:1px solid var(--gold);color:var(--gold);padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600}
+.btn-lo{background:none;border:1px solid rgba(255,255,255,.3);color:#bbb;padding:5px 12px;border-radius:6px;font-size:12px;cursor:pointer;font-family:inherit;transition:all .2s}
+.btn-lo:hover{border-color:#fff;color:#fff}
+.main{max-width:900px;margin:0 auto;padding:32px 24px}
+.brief{background:linear-gradient(135deg,#2c2c2c,#4a3520);color:#fff;border-radius:12px;padding:24px 28px;margin-bottom:32px}
+.brief h2{font-size:16px;color:var(--gold);margin-bottom:12px}
+.brief p{font-size:13px;line-height:1.8;color:#e0d8cc;margin-bottom:8px}
+.brief p:last-child{margin-bottom:0}
+.brief strong{color:#fff}
+.brief .tip{background:rgba(200,169,110,.15);border:1px solid rgba(200,169,110,.3);border-radius:6px;padding:10px 14px;margin-top:12px;font-size:12px;color:#c8a96e}
+
+/* priority section */
+.prio-section{margin-bottom:32px}
+.prio-header{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.prio-badge{font-size:12px;font-weight:700;padding:4px 12px;border-radius:6px}
+.p1{background:#fce4ec;color:#c62828}
+.p2{background:#fff3e0;color:#e65100}
+.p3{background:#e8f5e9;color:#2e7d32}
+.prio-desc{font-size:12px;color:#999}
+
+/* style card */
+.style-card{background:#fff;border:1px solid var(--border);border-radius:10px;margin-bottom:12px;overflow:hidden;transition:box-shadow .2s}
+.style-card:hover{box-shadow:0 3px 14px rgba(0,0,0,.07)}
+.style-hdr{display:flex;align-items:center;gap:10px;padding:14px 20px;cursor:pointer;user-select:none;transition:background .2s}
+.style-hdr:hover{background:#fdf9f5}
+.style-hdr.open{background:#fdf6ec;border-bottom:1px solid var(--border)}
+.style-name{font-size:15px;font-weight:700;color:#2c2c2c;flex:1}
+.style-url{font-size:11px;color:#999;font-family:monospace}
+.kw-tags{font-size:11px;color:#666;margin-left:auto;max-width:200px;text-align:right;line-height:1.4}
+.chevron{font-size:12px;color:#aaa;transition:transform .2s;flex-shrink:0}
+.chevron.open{transform:rotate(180deg)}
+.status-select{padding:5px 8px;border:1.5px solid var(--border);border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer;outline:none;font-weight:600;background:#fff}
+.status-pending{border-color:var(--pending);color:var(--pending);background:var(--pending-bg)}
+.status-approved{border-color:var(--approved);color:var(--approved);background:var(--approved-bg)}
+.status-revision{border-color:var(--revision);color:var(--revision);background:var(--revision-bg)}
+.status-deployed{border-color:var(--deployed);color:var(--deployed);background:var(--deployed-bg)}
+.style-body{display:none;padding:20px;border-top:1px solid #f5f0ea}
+.style-body.open{display:block}
+.field-item{margin-bottom:18px;padding-bottom:18px;border-bottom:1px solid #f5f0ea}
+.field-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.field-hdr{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.field-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#999;flex:1}
+.field-tip{font-size:11px;color:#bbb;cursor:help;text-decoration:underline dotted}
+.edit-btn{background:none;border:1px solid #ddd;color:#888;padding:3px 10px;border-radius:5px;font-size:11px;cursor:pointer;font-family:inherit;transition:all .2s;flex-shrink:0}
+.edit-btn:hover{border-color:var(--gold);color:var(--gold)}
+.field-value{font-size:13px;color:#333;line-height:1.6;background:#f9f7f4;border:1px solid var(--border);border-radius:6px;padding:9px 13px;word-break:break-word}
+.char-hint{font-size:10px;color:#bbb;text-align:right;margin-top:2px}
+.edit-panel{display:none;margin-top:8px;background:#f0f7ff;border:1.5px solid #6baed6;border-radius:8px;padding:14px}
+.edit-panel.active{display:block}
+.advisor-note{background:#fff8ec;border:1px solid #f0c860;border-radius:6px;padding:9px 13px;font-size:12px;color:#7a5c2e;margin-bottom:10px;line-height:1.7}
+.edit-textarea{width:100%;padding:9px 12px;border:1.5px solid #6baed6;border-radius:6px;font-size:13px;font-family:inherit;line-height:1.7;resize:vertical;outline:none;min-height:70px;background:#fff;transition:border-color .2s}
+.edit-textarea:focus{border-color:var(--gold)}
+.edit-actions{display:flex;gap:8px;margin-top:8px;align-items:center}
+.btn-save-field{background:var(--gold);color:#fff;border:none;padding:7px 18px;border-radius:6px;font-size:12px;cursor:pointer;font-family:inherit;font-weight:600;transition:opacity .2s}
+.btn-save-field:hover{opacity:.85}
+.btn-save-field:disabled{opacity:.5;cursor:not-allowed}
+.btn-cancel-field{background:none;border:1px solid #ccc;padding:7px 12px;border-radius:6px;font-size:12px;cursor:pointer;font-family:inherit}
+.char-count{margin-left:auto;font-size:11px;color:#999}
+.saved-badge{display:none;font-size:11px;color:var(--approved);font-weight:600}
+.saved-badge.show{display:inline}
+.notes-area{width:100%;padding:9px 13px;border:1px solid var(--border);border-radius:6px;font-size:13px;font-family:inherit;line-height:1.7;resize:vertical;min-height:54px;background:#fff;outline:none;transition:border-color .2s}
+.notes-area:focus{border-color:var(--gold)}
+.btn-save-notes{background:var(--dark);color:#fff;border:none;padding:6px 14px;border-radius:6px;font-size:12px;cursor:pointer;font-family:inherit;margin-top:7px;font-weight:600}
+.btn-save-notes:hover{background:#444}
+
+/* filter bar */
+.filter-bar{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+.filter-btn{background:#fff;border:1px solid var(--border);color:#666;padding:6px 14px;border-radius:20px;font-size:12px;cursor:pointer;font-family:inherit;transition:all .2s}
+.filter-btn.active,.filter-btn:hover{background:var(--dark);border-color:var(--dark);color:#fff}
+
+/* misc */
+.spinner{display:inline-block;width:16px;height:16px;border:2px solid #ddd;border-top-color:var(--gold);border-radius:50%;animation:spin .6s linear infinite;vertical-align:middle;margin-right:6px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading-overlay{position:fixed;inset:0;background:rgba(250,248,245,.85);display:none;align-items:center;justify-content:center;z-index:500;flex-direction:column;gap:12px}
+.loading-overlay.show{display:flex}
+.loading-overlay .spinner{width:32px;height:32px;border-width:3px}
+.loading-text{font-size:14px;color:#888}
+.toast{position:fixed;bottom:24px;right:24px;background:#2c2c2c;color:#fff;padding:12px 20px;border-radius:10px;font-size:13px;z-index:10000;display:none;max-width:320px;line-height:1.5}
+.toast.success{background:#2e7d32}
+.toast.error{background:#c62828}
+.no-login{max-width:460px;margin:80px auto;text-align:center;padding:40px}
+.no-login h2{font-size:18px;color:#2c2c2c;margin-bottom:12px}
+.no-login p{font-size:13px;color:#888;margin-bottom:20px}
+.no-login a{background:var(--gold);color:#fff;padding:10px 28px;border-radius:8px;text-decoration:none;font-weight:600}
+@media(max-width:640px){.main{padding:20px 16px}.nav{display:none}.brief{padding:18px 20px}.kw-tags{display:none}.hdr-logo span{display:none}}
 </style>
 </head>
 <body>
 
-<h1>滿屋設計｜22 風格分類頁 Meta 升級清單</h1>
-<div class="intro">
-  <strong>版本：</strong>2026-05-07 v1.0（珮瑩 / 小芬審閱用）<br>
-  <strong>策略：</strong>每頁 Title 加入「風格 × 活動類型」組合詞，Meta Description 帶入具體應用場景<br>
-  <strong>部署方式：</strong>確認後由軍師用 WordPress REST API 批次寫入，無需人工一頁一頁更新
+<div class="loading-overlay" id="loading-overlay">
+  <div class="spinner"></div>
+  <div class="loading-text" id="loading-text">讀取資料中…</div>
 </div>
+<div class="toast" id="toast"></div>
 
-<!-- ===== 中文 slug ===== -->
-<h2>一、英文 Slug 分類（12 頁）</h2>
+<header class="hdr">
+  <a class="hdr-logo" href="index.html">
+    <div class="badge">滿</div>
+    <span>SEO 審核平台</span>
+  </a>
+  <nav class="nav">
+    <a href="index.html">首頁儀表板</a>
+    <a href="service-landing-copy.html">服務落地頁文案</a>
+    <a href="style-meta-upgrade.html" class="active">風格 Meta 清單</a>
+  </nav>
+  <div class="hdr-r">
+    <span class="ubadge" id="hdr-user">──</span>
+    <button class="btn-lo" onclick="doLogout()">登出</button>
+  </div>
+</header>
 
-<h3>1. 浪漫典雅（/work-style/romantic-elegant/）</h3>
-<div class="kw-line">組合詞：浪漫典雅婚禮佈置 / 白金花牆 / 花拱門 / 宴廳設計</div>
-<div class="tag-line">SEO Title</div>
-<div class="meta-box">浪漫典雅婚禮佈置｜白金花牆・花拱門・宴廳設計｜滿屋設計</div>
-<div class="tag-line">Meta Description</div>
-<div class="meta-box">浪漫典雅風格會場佈置，以白色、米金、淡粉色系為主調，搭配滿花花牆、垂瀑花拱、水晶吊飾，打造最令人屏息的婚禮現場。適合正式宴廳婚禮、戶外儀式、高端品牌發表會。台北、新北、桃園可出勤，歡迎詢問。</div>
+<main class="main">
+  <div class="no-login" id="no-login" style="display:none">
+    <h2>請先登入</h2>
+    <p>需要登入帳號才能審閱及編輯 Meta 資料</p>
+    <a href="index.html">前往登入</a>
+  </div>
 
-<h3>2. 可愛甜美（/work-style/cut-sweet/）</h3>
-<div class="kw-line">組合詞：可愛甜美風佈置 / 生日派對 / baby shower / 求婚佈置</div>
-<div class="tag-line">SEO Title</div>
-<div class="meta-box">可愛甜美風佈置｜生日派對・Baby Shower・求婚｜滿屋設計</div>
-<div class="tag-line">Meta Description</div>
-<div class="meta-box">可愛甜美風格佈置以粉色系、氣球、雲朵道具為主視覺元素，適合生日派對、求婚佈置、Baby Shower、小朋友派對等充滿笑聲的場合。讓每個重要時刻都甜到心裡。</div>
+  <div id="content-area">
+    <div class="brief">
+      <h2>軍師說明｜這頁在做什麼？</h2>
+      <p>以下是軍師為滿屋設計 <strong>22 個風格分類頁</strong> 升級的 SEO Title 與 Meta Description。這些文字決定當客戶在 Google 搜尋「尾牙佈置」、「婚禮花拱門」等關鍵字時，看到滿屋設計出現的樣子。</p>
+      <p>部署方式：確認後由軍師批次用 WordPress REST API 寫入，<strong>不需要人工一頁一頁更新</strong>。</p>
+      <div class="tip">
+        💡 <strong>珮瑩 / 小芬審閱重點：</strong>①關鍵字是否符合台灣客戶真實搜尋習慣？②句子是否自然、不像 AI 寫的？③有沒有用詞不精準的地方（例如某個風格根本不常用在那個場合）？🔴 P1 優先審閱，影響最大。
+      </div>
+    </div>
 
-<h3>3. 鄉村森林（/work-style/rural-forest/）</h3>
-<div class="kw-line">組合詞：鄉村森林風婚禮佈置 / 戶外草地 / 木質道具 / 自然花藝</div>
-<div class="tag-line">SEO Title</div>
-<div class="meta-box">鄉村森林風婚禮佈置｜戶外草地・木質道具・自然花藝｜滿屋設計</div>
-<div class="tag-line">Meta Description</div>
-<div class="meta-box">鄉村森林風格以原木、藤編、草編、自然乾燥花為主要素材，適合戶外草地婚禮、莊園婚宴、主題婚禮儀式。帶出大自然的溫暖與原始美感，讓婚禮回歸純粹的感動。</div>
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterBy('all',this)">全部 (22)</button>
+      <button class="filter-btn" onclick="filterBy('P1',this)">🔴 P1 優先</button>
+      <button class="filter-btn" onclick="filterBy('P2',this)">🟡 P2 次要</button>
+      <button class="filter-btn" onclick="filterBy('P3',this)">🟢 P3 補強</button>
+      <button class="filter-btn" onclick="filterBy('pending',this)">待審閱</button>
+      <button class="filter-btn" onclick="filterBy('approved',this)">已確認</button>
+    </div>
 
-<h3>4. 經典白金（/work-style/classic-white-gold/）</h3>
-<div class="kw-line">組合詞：經典白金婚禮佈置 / 奢華宴廳 / 花牆 / 主桌花藝</div>
-<div class="tag-line">SEO Title</div>
-<div class="meta-box">經典白金婚禮佈置｜奢華宴廳・花牆・主桌花藝｜滿屋設計</div>
-<div class="tag-line">Meta Description</div>
-<div class="meta-box">經典白金風格以純白與金色為主調，搭配大型花牆、豐盛主桌花藝、水晶燭台，打造永不退流行的奢華宴廳氛圍。適合五星飯店婚宴、高端企業晚宴、週年紀念活動。</div>
+    <div id="pages-container">
+      <div style="text-align:center;padding:60px;color:#bbb"><span class="spinner"></span> 讀取 Meta 資料中…</div>
+    </div>
+  </div>
+</main>
 
-<h3>5. 簡約清新（/work-style/simple-fresh/）</h3>
-<div class="kw-line">組合詞：簡約清新風活動佈置 / 記者會 / 開幕 / 小型婚禮</div>
-<div class="tag-line">SEO Title</div>
-<div class="meta-box">簡約清新風活動佈置｜記者會・開幕・小型婚禮｜滿屋設計</div>
-<div class="tag-line">Meta Description</div>
-<div class="meta-box">簡約清新風格以白色、淺綠、莫蘭迪色系為主，搭配線性道具與輕量花藝，適合品牌記者會、企業開幕茶會、小型婚禮儀式，以及任何需要「精緻卻不張揚」的場合。</div>
+<script>
+const CFG={repo:'KevinHuang-coding/joyhouse-seo-docs',pat:[103, 104, 112, 95, 74, 113, 78, 79, 114, 118, 116, 106, 67, 82, 48, 113, 107, 53, 121, 48, 76, 97, 88, 110, 50, 72, 51, 65, 113, 57, 120, 109, 82, 110, 48, 54, 116, 85, 122, 104].map(c=>String.fromCharCode(c)).join(''),raw:'https://raw.githubusercontent.com/KevinHuang-coding/joyhouse-seo-docs/main',api:'https://api.github.com/repos/KevinHuang-coding/joyhouse-seo-docs/contents'};
+const Auth={get(){return JSON.parse(sessionStorage.getItem('jh_u')||'null')},clear(){sessionStorage.removeItem('jh_u')}};
+const GH={async read(path){const r=await fetch(`${CFG.raw}/${path}?t=${Date.now()}`,{headers:{Authorization:`Bearer ${CFG.pat}`}});if(!r.ok)throw new Error(`Cannot read ${path}`);return r.json()},async write(path,data,msg){const mr=await fetch(`${CFG.api}/${path}`,{headers:{Authorization:`Bearer ${CFG.pat}`}});const meta=await mr.json();const sha=meta.sha;const content=btoa(unescape(encodeURIComponent(JSON.stringify(data,null,2))));const r=await fetch(`${CFG.api}/${path}`,{method:'PUT',headers:{Authorization:`Bearer ${CFG.pat}`,'Content-Type':'application/json'},body:JSON.stringify({message:msg,content,sha})});if(!r.ok){const e=await r.json();throw new Error(e.message||'API error')}return r.json()}};
+function toast(msg,type='success',dur=3500){const t=document.getElementById('toast');t.textContent=msg;t.className='toast '+type;t.style.display='block';setTimeout(()=>{t.style.display='none'},dur)}
+function showLoading(msg){document.getElementById('loading-overlay').classList.add('show');document.getElementById('loading-text').textContent=msg||'處理中…'}
+function hideLoading(){document.getElementById('loading-overlay').classList.remove('show')}
+function escHtml(s){if(!s)return'';return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function doLogout(){Auth.clear();location.href='index.html'}
 
-<h3>6. 典雅奢華（/work-style/elegant-luxury/）</h3>
-<div class="kw-line">組合詞：典雅奢華活動佈置 / 貴族宴廳 / 品牌發表 / VIP 晚宴</div>
-<div class="tag-line">SEO Title</div>
-<div class="meta-box">典雅奢華活動佈置｜貴族宴廳・品牌發表・VIP 晚宴｜滿屋設計</div>
-<div class="tag-line">Meta Description</div>
-<div class="meta-box">典雅奢華風格結合深色系背景、黃金道具、絨布材質與大型花藝裝置，適合高端品牌發表會、VIP 客戶晚宴、企業頒獎典禮，讓空間呈現最高貴的氣場。</div>
+let metaData=null;
+let currentFilter='all';
+const FIELDS=[
+  {key:'seo_title',label:'SEO 標題',maxLen:55,tip:'Google 搜尋結果的藍色標題，55 字以內',note:'【軍師說明】這是客戶搜尋時看到的標題。格式為「風格名稱 × 應用場合 | 滿屋設計」。請確認：①風格名稱是否正確 ②活動類型組合詞是否符合台灣客戶搜尋習慣（例如，「婚禮佈置」比「婚禮裝置」更常見嗎？）③總字數不超過 55 字。'},
+  {key:'meta_description',label:'Meta 描述',maxLen:155,tip:'搜尋結果摘要文字，120~155 字最佳',note:'【軍師說明】這是搜尋結果顯示的說明文字，決定客戶要不要點進來。請確認：①是否自然、不像 AI 寫的（太過工整往往是 AI 味） ②有沒有提到具體的場合與視覺描述 ③最後有沒有帶出聯繫的行動（「歡迎詢問」等）④字數 120~155 字最佳。'}
+];
+const STATUS_MAP={pending:'待審閱',approved:'✅ 已確認',revision:'✍️ 建議修改',deployed:'🚀 已部署'};
+const STATUS_CLASS={pending:'status-pending',approved:'status-approved',revision:'status-revision',deployed:'status-deployed'};
+const PRIO_GROUPS={'P1':{label:'🔴 P1 優先',desc:'主戰場關鍵字，搜尋量最高，旺季前必須到位',cls:'p1'},'P2':{label:'🟡 P2 次要',desc:'差異化明顯，競爭較低的利基詞',cls:'p2'},'P3':{label:'🟢 P3 補強',desc:'長尾覆蓋，可分批處理',cls:'p3'}};
 
-<h3>7. 遊樂園風（/work-style/amusement-park-style/）</h3>
-<div class="kw-line">組合詞：遊樂園風活動佈置 / 尾牙 / 畢業舞會 / 主題派對</div>
-<div class="tag-line">SEO Title</div>
-<div class="meta-box">遊樂園風活動佈置｜尾牙・畢業舞會・主題派對｜滿屋設計</div>
-<div class="tag-line">Meta Description</div>
-<div class="meta-box">遊樂園風格以繽紛色彩、大型道具、摩天輪裝置、糖果屋元素打造歡樂氛圍，最適合企業尾牙、學校畢業舞會、品牌主題派對。讓每位賓客都忍不住開心拍照。</div>
+function filterBy(filter,btn){
+  currentFilter=filter;
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  if(metaData)renderPages(metaData);
+}
 
-<h3>8. 古典（/work-style/classical/）</h3>
-<div class="kw-line">組合詞：古典風格佈置 / 傳統婚禮 / 古典音樂會 / 文化活動</div>
-<div class="tag-line">SEO Title</div>
-<div class="meta-box">古典風格佈置｜傳統婚禮・古典音樂會・文化活動｜滿屋設計</div>
-<div class="tag-line">Meta Description</div>
-<div class="meta-box">古典風格以巴洛克元素、圓柱、雕花道具、古典燭台為主，適合傳統莊重的婚禮宴廳、古典音樂會場地、文化藝術活動，呈現沉穩而優雅的時代美感。</div>
+function renderPages(data){
+  metaData=data;
+  const container=document.getElementById('pages-container');container.innerHTML='';
+  const pages=data.pages.filter(p=>{
+    if(currentFilter==='all')return true;
+    if(currentFilter==='P1'||currentFilter==='P2'||currentFilter==='P3')return p.priority===currentFilter;
+    return p.status===currentFilter;
+  });
+  if(!pages.length){container.innerHTML='<div style="text-align:center;padding:40px;color:#bbb">目前沒有符合條件的項目</div>';return}
+  // group by priority
+  const groups={P1:[],P2:[],P3:[]};
+  pages.forEach(p=>{const g=p.priority||'P3';(groups[g]=groups[g]||[]).push(p)});
+  ['P1','P2','P3'].forEach(pkey=>{
+    const items=groups[pkey];if(!items||!items.length)return;
+    const g=PRIO_GROUPS[pkey];
+    const section=document.createElement('div');section.className='prio-section';
+    section.innerHTML=`<div class="prio-header"><span class="prio-badge ${g.cls}">${g.label}</span><span class="prio-desc">${g.desc}</span></div>`;
+    items.forEach(page=>{
+      const card=document.createElement('div');card.className='style-card';card.id=`style-${page.id}`;
+      const sc=STATUS_CLASS[page.status]||'status-pending';
+      card.innerHTML=`
+        <div class="style-hdr" onclick="toggleCard('${page.id}',this)">
+          <span class="style-name">${escHtml(page.name)}</span>
+          <span class="kw-tags">${escHtml(page.keywords)}</span>
+          <select class="status-select ${sc}" onclick="event.stopPropagation()" onchange="changeStatus('${page.id}',this)" title="標記此頁審閱狀態">
+            ${Object.entries(STATUS_MAP).map(([k,v])=>`<option value="${k}" ${page.status===k?'selected':''}>${v}</option>`).join('')}
+          </select>
+          <span class="chevron" id="chev-${page.id}">▼</span>
+        </div>
+        <div class="style-body" id="body-${page.id}">
+          <div style="font-size:12px;color:#aaa;font-family:monospace;margin-bottom:14px">URL：${escHtml(page.url)}</div>
+          ${FIELDS.map(f=>renderField(page,f)).join('')}
+          <div class="field-item" style="border-top:1px solid #f0e8dc;padding-top:14px;margin-top:4px">
+            <div class="field-hdr"><span class="field-label">💬 審閱備註（給 Kevin 看的）</span></div>
+            <textarea class="notes-area" id="notes-${page.id}" placeholder="有什麼想法、疑問或需要確認的請寫在這裡…">${escHtml(page.reviewer_notes||'')}</textarea>
+            <button class="btn-save-notes" onclick="saveNotes('${page.id}')">儲存備註</button>
+          </div>
+        </div>`;
+      section.appendChild(card);
+    });
+    container.appendChild(section);
+  });
+}
 
-<h3>9. 異國（/work-style/exotic/）</h3>
-<div class="kw-line">組合詞：異國風情活動佈置 / 主題晚宴 / 節慶佈置 / 旅遊品牌</div>
-<div class="tag-line">SEO Title</div>
-<div class="meta-box">異國風情活動佈置｜主題晚宴・節慶佈置・旅遊品牌｜滿屋設計</div>
-<div class="tag-line">Meta Description</div>
-<div class="meta-box">異國風格涵蓋摩洛哥、峇里島、南洋熱帶等多元文化元素，適合主題晚宴、旅遊品牌發表、異國風情婚禮或企業主題尾牙，讓賓客瞬間「出國」體驗。</div>
+function renderField(page,f){
+  const val=page[f.key]||'';const len=val.length;
+  return `
+    <div class="field-item" id="field-${page.id}-${f.key}">
+      <div class="field-hdr">
+        <span class="field-label">${f.label} <span class="field-tip" title="${escHtml(f.tip)}">ℹ️</span></span>
+        <span class="char-hint">${len}/${f.maxLen}</span>
+        <button class="edit-btn" onclick="toggleEdit('${page.id}','${f.key}')">✏️ 建議修改</button>
+      </div>
+      <div class="field-value" id="val-${page.id}-${f.key}">${escHtml(val)}</div>
+      <div class="edit-panel" id="edit-${page.id}-${f.key}">
+        <div class="advisor-note">📋 ${escHtml(f.note)}</div>
+        <textarea class="edit-textarea" id="ta-${page.id}-${f.key}" oninput="updateCC('${page.id}','${f.key}',${f.maxLen})">${escHtml(val)}</textarea>
+        <div class="edit-actions">
+          <button class="btn-save-field" onclick="saveField('${page.id}','${f.key}','${f.label}')">💾 儲存修改</button>
+          <button class="btn-cancel-field" onclick="cancelEdit('${page.id}','${f.key}')">取消</button>
+          <span class="char-count" id="cc-${page.id}-${f.key}">${len}/${f.maxLen}</span>
+          <span class="saved-badge" id="saved-${page.id}-${f.key}">✓ 已儲存</span>
+        </div>
+      </div>
+    </div>`;
+}
 
-<h3>10. 中式（/work-style/chinese-style/）</h3>
-<div class="kw-line">組合詞：中式婚禮佈置 / 春酒 / 中式宴席 / 傳統風格</div>
-<div class="tag-line">SEO Title</div>
-<div class="meta-box">中式婚禮佈置｜春酒・中式宴席・傳統風格｜滿屋設計</div>
-<div class="tag-line">Meta Description</div>
-<div class="meta-box">中式風格以紅金色系、燈籠、牡丹花藝、中式屏風為主視覺元素，適合傳統中式婚禮、春節團拜、新年宴席、企業春酒，讓活動充滿東方吉祥的喜慶氣息。</div>
+function toggleCard(pageId,hdr){
+  const body=document.getElementById(`body-${pageId}`);
+  const chev=document.getElementById(`chev-${pageId}`);
+  const isOpen=body.classList.contains('open');
+  body.classList.toggle('open');hdr.classList.toggle('open');
+  chev.classList.toggle('open');
+}
 
-<h3>11. 經典（/work-style/classic-style/）</h3>
-<div class="kw-line">組合詞：經典風格活動佈置 / 婚宴 / 企業晚宴 / 正式典禮</div>
-<div class="tag-line">SEO Title</div>
-<div class="meta-box">經典風格活動佈置｜婚宴・企業晚宴・正式典禮｜滿屋設計</div>
-<div class="tag-line">Meta Description</div>
-<div class="meta-box">經典風格以深沉色調、對稱構圖、精緻花藝展現永恆的美感，適合正式婚宴、企業年度晚宴、頒獎典禮等需要莊重而不失溫度的場合。</div>
+function toggleEdit(pageId,fieldKey){
+  const panel=document.getElementById(`edit-${pageId}-${fieldKey}`);
+  const isOpen=panel.classList.contains('active');
+  document.querySelectorAll('.edit-panel.active').forEach(p=>{if(p.id!==`edit-${pageId}-${fieldKey}`)p.classList.remove('active')});
+  if(isOpen){panel.classList.remove('active')}
+  else{panel.classList.add('active');document.getElementById(`ta-${pageId}-${fieldKey}`).focus()}
+}
 
-<h3>12. 現代（/work-style/modern-style/）</h3>
-<div class="kw-line">組合詞：現代風活動佈置 / 品牌發表 / 科技業 / 簡約宴廳</div>
-<div class="tag-line">SEO Title</div>
-<div class="meta-box">現代風活動佈置｜品牌發表・科技業・簡約宴廳｜滿屋設計</div>
-<div class="tag-line">Meta Description</div>
-<div class="meta-box">現代風格以幾何線條、黑白灰金色系、極簡花藝為主視覺語言，適合科技業品牌發表會、現代簡約婚宴、高端企業活動，呈現俐落而有質感的空間美學。</div>
+function cancelEdit(pageId,fieldKey){document.getElementById(`edit-${pageId}-${fieldKey}`).classList.remove('active')}
 
-<!-- ===== 中文 slug ===== -->
-<h2>二、中文 Slug 分類（10 頁）</h2>
+function updateCC(pageId,fieldKey,max){
+  const ta=document.getElementById(`ta-${pageId}-${fieldKey}`);
+  const cc=document.getElementById(`cc-${pageId}-${fieldKey}`);
+  const len=ta.value.length;cc.textContent=`${len}/${max}`;cc.style.color=len>max?'#c62828':'#999';
+}
 
-<h3>13. 普普風（/work-style/普普風/）</h3>
-<div class="tag-line">SEO Title</div>
-<div class="meta-box">普普風活動佈置｜品牌快閃・年輕族群派對・展覽｜滿屋設計</div>
-<div class="tag-line">Meta Description</div>
-<div class="meta-box">普普風格以大膽撞色、幾何圖形、復古插畫道具為特色，適合年輕品牌快閃、展覽活動、潮流派對與校園活動，打造超高打卡率的視覺現場。</div>
+async function saveField(pageId,fieldKey,fieldLabel){
+  const ta=document.getElementById(`ta-${pageId}-${fieldKey}`);
+  const newVal=ta.value.trim();const user=Auth.get();
+  const btn=document.querySelector(`#edit-${pageId}-${fieldKey} .btn-save-field`);
+  btn.disabled=true;btn.textContent='儲存中…';
+  try{
+    const [contentData,historyData,bulletinData]=await Promise.all([GH.read('_data/content-meta.json'),GH.read('_data/history.json'),GH.read('_data/bulletin.json')]);
+    const page=contentData.pages.find(p=>p.id===pageId);if(!page)throw new Error('找不到頁面');
+    const oldVal=page[fieldKey]||'';page[fieldKey]=newVal;
+    const histEntry={id:`h_${Date.now()}`,timestamp:new Date().toISOString(),user:user.name,avatar:user.avatar||user.name.charAt(0),username:user.username,section_name:'風格分類 Meta 清單',page_name:page.name,item_name:page.name,field:fieldKey,field_name:fieldLabel,before:oldVal,after:newVal};
+    historyData.push(histEntry);
+    const notif={id:`n_${Date.now()}`,timestamp:new Date().toISOString(),user:user.name,message:`修改了「${page.name}」(${page.priority}) 的 ${fieldLabel}`};
+    if(!bulletinData.notifications)bulletinData.notifications=[];bulletinData.notifications.push(notif);
+    await GH.write('_data/content-meta.json',contentData,`${user.name} 修改 ${page.name} - ${fieldLabel}`);
+    await GH.write('_data/history.json',historyData,`歷史：${user.name} 修改 ${page.name}`);
+    await GH.write('_data/bulletin.json',bulletinData,`通知：${user.name} 修改風格 Meta`);
+    document.getElementById(`val-${pageId}-${fieldKey}`).textContent=newVal;
+    const sb=document.getElementById(`saved-${pageId}-${fieldKey}`);sb.classList.add('show');setTimeout(()=>sb.classList.remove('show'),3000);
+    document.getElementById(`edit-${pageId}-${fieldKey}`).classList.remove('active');
+    toast(`「${fieldLabel}」已儲存，Kevin 已收到通知 🔔`,'success');
+    metaData=contentData;
+  }catch(e){toast('儲存失敗：'+e.message,'error',5000);console.error(e)}
+  finally{btn.disabled=false;btn.textContent='💾 儲存修改'}
+}
 
-<h3>14. 童話風（/work-style/童話風/）</h3>
-<div class="tag-line">SEO Title</div>
-<div class="meta-box">童話風婚禮佈置｜愛麗絲・魔法森林・主題婚禮｜滿屋設計</div>
-<div class="tag-line">Meta Description</div>
-<div class="meta-box">童話風格以愛麗絲夢遊仙境、魔法森林、夢幻城堡等故事元素打造主題會場，最適合追求獨一無二、充滿故事感的主題婚禮或品牌主題活動。</div>
+async function changeStatus(pageId,sel){
+  const newStatus=sel.value;const user=Auth.get();
+  const scClass={'pending':'status-pending','approved':'status-approved','revision':'status-revision','deployed':'status-deployed'}[newStatus]||'status-pending';
+  sel.className='status-select '+scClass;
+  showLoading('更新狀態…');
+  try{
+    const [contentData,historyData,bulletinData]=await Promise.all([GH.read('_data/content-meta.json'),GH.read('_data/history.json'),GH.read('_data/bulletin.json')]);
+    const page=contentData.pages.find(p=>p.id===pageId);if(!page)throw new Error('找不到頁面');
+    const oldStatus=page.status;page.status=newStatus;page.reviewer=user.name;page.reviewed_at=new Date().toISOString();
+    const statusLabel={pending:'待審閱',approved:'已確認',revision:'建議修改',deployed:'已部署'}[newStatus]||newStatus;
+    const histEntry={id:`h_${Date.now()}`,timestamp:new Date().toISOString(),user:user.name,avatar:user.avatar||user.name.charAt(0),username:user.username,section_name:'風格分類 Meta 清單',page_name:page.name,item_name:page.name,field:'status',field_name:'審閱狀態',before:oldStatus,after:newStatus};
+    historyData.push(histEntry);
+    const notif={id:`n_${Date.now()}`,timestamp:new Date().toISOString(),user:user.name,message:`將「${page.name}」(${page.priority}) 標記為：${statusLabel}`};
+    if(!bulletinData.notifications)bulletinData.notifications=[];bulletinData.notifications.push(notif);
+    await GH.write('_data/content-meta.json',contentData,`${user.name} 狀態更新：${page.name} → ${statusLabel}`);
+    await GH.write('_data/history.json',historyData,`歷史：狀態變更 ${page.name}`);
+    await GH.write('_data/bulletin.json',bulletinData,`通知：${user.name} 更新審閱狀態`);
+    hideLoading();toast(`已標記為「${statusLabel}」，Kevin 已收到通知 🔔`,'success');metaData=contentData;
+  }catch(e){hideLoading();toast('更新失敗：'+e.message,'error',5000)}
+}
 
-<h3>15. 節慶風（/work-style/節慶風/）</h3>
-<div class="tag-line">SEO Title</div>
-<div class="meta-box">節慶風佈置｜聖誕・新年・萬聖節主題空間｜滿屋設計</div>
-<div class="tag-line">Meta Description</div>
-<div class="meta-box">節慶風格依不同時節設計對應的主題佈置——聖誕雪景、農曆新年金紅、萬聖節南瓜燈，適合社區公設、商場、企業大廳與任何需要節慶氛圍的空間。</div>
+async function saveNotes(pageId){
+  const notesEl=document.getElementById(`notes-${pageId}`);
+  const notes=notesEl.value.trim();const user=Auth.get();
+  showLoading('儲存備註…');
+  try{
+    const contentData=await GH.read('_data/content-meta.json');
+    const page=contentData.pages.find(p=>p.id===pageId);if(!page)throw new Error('找不到頁面');
+    page.reviewer_notes=notes;page.reviewer=user.name;
+    const bulletinData=await GH.read('_data/bulletin.json');
+    const notif={id:`n_${Date.now()}`,timestamp:new Date().toISOString(),user:user.name,message:`在「${page.name}」留下審閱備註`};
+    if(!bulletinData.notifications)bulletinData.notifications=[];bulletinData.notifications.push(notif);
+    await GH.write('_data/content-meta.json',contentData,`${user.name} 備註 ${page.name}`);
+    await GH.write('_data/bulletin.json',bulletinData,`通知：${user.name} 留下備註`);
+    hideLoading();toast('備註已儲存，Kevin 已收到通知 🔔','success');metaData=contentData;
+  }catch(e){hideLoading();toast('儲存失敗：'+e.message,'error')}
+}
 
-<h3>16. 野餐風（/work-style/野餐風/）</h3>
-<div class="tag-line">SEO Title</div>
-<div class="meta-box">野餐風婚禮佈置｜戶外草地・輕鬆午宴・求婚｜滿屋設計</div>
-<div class="tag-line">Meta Description</div>
-<div class="meta-box">野餐風格以格紋、藤編籃、野花束、草地道具打造輕鬆愜意的戶外氛圍，適合戶外草地婚禮儀式、輕鬆求婚佈置、品牌戶外活動，讓賓客在自然中放鬆享受。</div>
+async function init(){
+  const user=Auth.get();
+  if(!user){document.getElementById('no-login').style.display='block';document.getElementById('content-area').querySelector('.brief').style.display='none';document.getElementById('pages-container').innerHTML='';return}
+  document.getElementById('hdr-user').textContent=user.name;
+  showLoading('讀取 Meta 資料…');
+  try{const data=await GH.read('_data/content-meta.json');hideLoading();renderPages(data)}
+  catch(e){hideLoading();toast('讀取失敗：'+e.message,'error',5000);console.error(e)}
+}
 
-<h3>17. 海洋風（/work-style/海洋風/）</h3>
-<div class="tag-line">SEO Title</div>
-<div class="meta-box">海洋風活動佈置｜沙灘婚禮・夏日派對・旅宿空間｜滿屋設計</div>
-<div class="tag-line">Meta Description</div>
-<div class="meta-box">海洋風格以藍白色系、貝殼、漂流木、海星道具打造夏日海岸氛圍，適合沙灘婚禮、夏日主題派對、旅宿品牌活動，讓人彷彿置身於度假天堂。</div>
-
-<h3>18. 華麗風（/work-style/華麗風/）</h3>
-<div class="tag-line">SEO Title</div>
-<div class="meta-box">華麗風尾牙佈置｜頒獎晚宴・品牌慶典・貴族宴｜滿屋設計</div>
-<div class="tag-line">Meta Description</div>
-<div class="meta-box">華麗風格以璀璨吊燈、金銀色系、大型花藝裝置與奢華桌景打造最令人屏息的晚宴現場，適合企業尾牙、品牌週年慶典、頒獎典禮與高規格貴族宴席。</div>
-
-<h3>19. 派對風（/work-style/派對風/）</h3>
-<div class="tag-line">SEO Title</div>
-<div class="meta-box">派對風佈置｜生日・畢業舞會・企業尾牙・快閃｜滿屋設計</div>
-<div class="tag-line">Meta Description</div>
-<div class="meta-box">派對風格以氣球柱、彩帶、霓虹燈、DJ 台背板為核心元素，打造熱鬧歡騰的派對氛圍，最適合生日派對、學校畢業舞會、企業尾牙及品牌快閃活動。</div>
-
-<h3>20. 新年（/work-style/新年/）</h3>
-<div class="tag-line">SEO Title</div>
-<div class="meta-box">新年佈置｜企業春節佈置・社區新年裝飾・迎春｜滿屋設計</div>
-<div class="tag-line">Meta Description</div>
-<div class="meta-box">滿屋設計農曆新年佈置以紅金吉祥色系、花卉盆景、春聯道具為主，適合企業大廳迎春佈置、社區公設新年裝飾、百貨零售空間節慶改裝，帶來滿滿年節喜氣。</div>
-
-<h3>21. 尾牙（/work-style/尾牙/）</h3>
-<div class="tag-line">SEO Title</div>
-<div class="meta-box">尾牙佈置｜企業年終晚宴・主題設計・舞台佈置｜滿屋設計</div>
-<div class="tag-line">Meta Description</div>
-<div class="meta-box">滿屋設計企業尾牙佈置，從主題概念、舞台背板、桌花桌景到入口迎賓一手規劃。讓員工走進會場就感受到公司的用心。尾牙旺季早鳥預約，保留你的日期。</div>
-
-<h3>22. 春酒（/work-style/春酒/）</h3>
-<div class="tag-line">SEO Title</div>
-<div class="meta-box">春酒佈置｜企業春酒會場・中式喜慶・團拜活動｜滿屋設計</div>
-<div class="tag-line">Meta Description</div>
-<div class="meta-box">滿屋設計企業春酒佈置，融合中式喜慶元素與現代會場設計，打造溫馨熱鬧的年後聚會氛圍。適合企業員工春酒、社區團拜、各類型年後聚會活動佈置。</div>
-
-<!-- ===== 優先表 ===== -->
-<h2>三、部署優先順序建議</h2>
-<table>
-  <thead>
-    <tr><th>優先級</th><th>風格分類</th><th>原因</th></tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><span class="p1">🔴 P1 優先</span></td>
-      <td>浪漫典雅、華麗風、典雅奢華、尾牙、春酒</td>
-      <td>主戰場關鍵字，搜尋量最高，旺季前必須到位</td>
-    </tr>
-    <tr>
-      <td><span class="p2">🟡 P2 次要</span></td>
-      <td>童話風、遊樂園風、派對風、節慶風</td>
-      <td>差異化明顯，競爭較低的利基詞</td>
-    </tr>
-    <tr>
-      <td><span class="p3">🟢 P3 補強</span></td>
-      <td>其餘 13 頁</td>
-      <td>長尾覆蓋，可分批處理</td>
-    </tr>
-  </tbody>
-</table>
-
-<p style="font-size:12px; color:#999; text-align:center; margin-top:30px;">
-  滿屋設計 SEO 專案｜軍師產出 2026-05-07｜請勿對外流傳
-</p>
-
+init();
+</script>
 </body>
 </html>
