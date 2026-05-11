@@ -1,0 +1,20 @@
+{
+  "kevin": {
+    "name": "Kevin 主公",
+    "role": "admin",
+    "password": "888888",
+    "avatar": "K"
+  },
+  "peying": {
+    "name": "珮瑩",
+    "role": "editor",
+    "password": "888888",
+    "avatar": "珮"
+  },
+  "xiaofen": {
+    "name": "小芬",
+    "role": "editor",
+    "password": "888888",
+    "avatar": "芬"
+  }
+}
