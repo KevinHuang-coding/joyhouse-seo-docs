@@ -3,379 +3,330 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>滿屋設計｜6 大服務落地頁文案草稿</title>
+<title>服務落地頁文案審閱｜滿屋設計 SEO 平台</title>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: "Microsoft JhengHei", "PingFang TC", "Noto Sans CJK TC", sans-serif;
-    font-size: 14px;
-    line-height: 1.8;
-    color: #333;
-    background: #fff;
-    padding: 40px 60px;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  h1 {
-    font-size: 22px;
-    color: #2c2c2c;
-    border-bottom: 3px solid #c8a96e;
-    padding-bottom: 12px;
-    margin-bottom: 20px;
-  }
-  h2 {
-    font-size: 18px;
-    color: #7a5c2e;
-    background: #fdf6ec;
-    border-left: 5px solid #c8a96e;
-    padding: 10px 16px;
-    margin: 36px 0 16px;
-    page-break-after: avoid;
-  }
-  h3 {
-    font-size: 14px;
-    color: #555;
-    font-weight: bold;
-    margin: 20px 0 8px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-  h4 {
-    font-size: 14px;
-    color: #333;
-    font-weight: bold;
-    margin: 16px 0 6px;
-  }
-  p { margin-bottom: 12px; }
-  .meta-box {
-    background: #f7f7f7;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 10px 14px;
-    font-family: monospace;
-    font-size: 13px;
-    margin-bottom: 12px;
-    white-space: pre-wrap;
-    word-break: break-all;
-  }
-  .tag-line {
-    font-size: 12px;
-    color: #888;
-    margin-bottom: 4px;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-  .kw-box {
-    background: #eef6ff;
-    border: 1px solid #b3d4f5;
-    border-radius: 4px;
-    padding: 8px 12px;
-    font-size: 13px;
-    margin-bottom: 8px;
-  }
-  .cta-box {
-    background: #fff8ec;
-    border: 2px solid #c8a96e;
-    border-radius: 6px;
-    padding: 14px 18px;
-    font-size: 14px;
-    font-weight: bold;
-    color: #7a5c2e;
-    margin-top: 16px;
-    text-align: center;
-  }
-  ul, ol { padding-left: 22px; margin-bottom: 12px; }
-  li { margin-bottom: 4px; }
-  .divider {
-    border: none;
-    border-top: 1px solid #e0e0e0;
-    margin: 30px 0;
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 16px 0;
-    font-size: 13px;
-  }
-  th {
-    background: #7a5c2e;
-    color: white;
-    padding: 8px 12px;
-    text-align: left;
-  }
-  td {
-    padding: 7px 12px;
-    border-bottom: 1px solid #eee;
-  }
-  tr:nth-child(even) td { background: #fdf6ec; }
-  .intro {
-    background: #fdf6ec;
-    border: 1px solid #e0c897;
-    border-radius: 6px;
-    padding: 14px 18px;
-    margin-bottom: 28px;
-    font-size: 13px;
-    color: #5a4020;
-  }
-  .page-num {
-    font-size: 11px;
-    color: #aaa;
-    text-align: right;
-    margin-top: 4px;
-  }
-  @media print {
-    body { padding: 20px 30px; }
-    h2 { page-break-before: always; }
-    h2:first-of-type { page-break-before: avoid; }
-    .cta-box, .meta-box, .kw-box { page-break-inside: avoid; }
-  }
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--gold:#c8a96e;--dark:#2c2c2c;--bg:#faf8f5;--border:#e8e0d5;--r:10px;--pending:#c62828;--pending-bg:#fce4ec;--approved:#2e7d32;--approved-bg:#e8f5e9;--revision:#e65100;--revision-bg:#fff3e0;--deployed:#1565c0;--deployed-bg:#e3f2fd}
+body{font-family:"Microsoft JhengHei","PingFang TC",sans-serif;background:var(--bg);color:#333;font-size:14px;min-height:100vh}
+.hdr{background:#2c2c2c;color:#fff;padding:0 24px;height:56px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+.hdr-logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff}
+.hdr-logo .badge{width:34px;height:34px;background:var(--gold);border-radius:7px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;flex-shrink:0}
+.hdr-logo span{font-size:14px;font-weight:600}
+.nav{display:flex;gap:4px;margin-left:16px}
+.nav a{color:#bbb;text-decoration:none;padding:6px 12px;border-radius:6px;font-size:13px;transition:all .2s;white-space:nowrap}
+.nav a:hover,.nav a.active{background:rgba(255,255,255,.12);color:#fff}
+.hdr-r{margin-left:auto;display:flex;align-items:center;gap:10px}
+.ubadge{background:rgba(200,169,110,.2);border:1px solid var(--gold);color:var(--gold);padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600}
+.btn-lo{background:none;border:1px solid rgba(255,255,255,.3);color:#bbb;padding:5px 12px;border-radius:6px;font-size:12px;cursor:pointer;font-family:inherit;transition:all .2s}
+.btn-lo:hover{border-color:#fff;color:#fff}
+.main{max-width:900px;margin:0 auto;padding:32px 24px}
+
+/* brief banner */
+.brief{background:linear-gradient(135deg,#2c2c2c,#4a3520);color:#fff;border-radius:12px;padding:24px 28px;margin-bottom:32px}
+.brief h2{font-size:16px;color:var(--gold);margin-bottom:12px}
+.brief p{font-size:13px;line-height:1.8;color:#e0d8cc;margin-bottom:8px}
+.brief p:last-child{margin-bottom:0}
+.brief strong{color:#fff}
+.brief .tip{background:rgba(200,169,110,.15);border:1px solid rgba(200,169,110,.3);border-radius:6px;padding:10px 14px;margin-top:12px;font-size:12px;color:#c8a96e}
+
+/* page card */
+.page-card{background:#fff;border:1px solid var(--border);border-radius:12px;margin-bottom:24px;overflow:hidden;transition:box-shadow .2s}
+.page-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.08)}
+.page-header{display:flex;align-items:center;gap:12px;padding:18px 24px;border-bottom:1px solid var(--border);background:#fdfdfd}
+.page-num{width:32px;height:32px;background:var(--gold);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0}
+.page-name{font-size:16px;font-weight:700;color:#2c2c2c;flex:1}
+.page-meta{font-size:12px;color:#999;margin-top:2px}
+.status-select{padding:6px 10px;border:1.5px solid var(--border);border-radius:6px;font-size:12px;font-family:inherit;cursor:pointer;outline:none;font-weight:600;background:#fff}
+.status-pending{border-color:var(--pending);color:var(--pending);background:var(--pending-bg)}
+.status-approved{border-color:var(--approved);color:var(--approved);background:var(--approved-bg)}
+.status-revision{border-color:var(--revision);color:var(--revision);background:var(--revision-bg)}
+.status-deployed{border-color:var(--deployed);color:var(--deployed);background:var(--deployed-bg)}
+.page-body{padding:24px}
+
+/* field item */
+.field-item{margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid #f5f0ea}
+.field-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.field-hdr{display:flex;align-items:flex-start;gap:8px;margin-bottom:10px}
+.field-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#999;flex:1}
+.field-tip{font-size:11px;color:#bbb;margin-left:4px;cursor:help;text-decoration:underline dotted}
+.edit-btn{background:none;border:1px solid #ddd;color:#888;padding:4px 12px;border-radius:5px;font-size:11px;cursor:pointer;font-family:inherit;transition:all .2s;flex-shrink:0}
+.edit-btn:hover{border-color:var(--gold);color:var(--gold)}
+.field-value{font-size:13px;color:#333;line-height:1.6;background:#f9f7f4;border:1px solid var(--border);border-radius:6px;padding:10px 14px;min-height:40px;word-break:break-word}
+.field-value.kw{background:#e8f4ff;border-color:#b3d4f5;color:#1a5fa8;font-size:12px}
+.char-hint{font-size:11px;color:#aaa;text-align:right;margin-top:2px}
+
+/* inline editor */
+.edit-panel{display:none;margin-top:8px;background:#f0f7ff;border:1.5px solid #6baed6;border-radius:8px;padding:16px}
+.edit-panel.active{display:block}
+.advisor-note{background:#fff8ec;border:1px solid #f0c860;border-radius:6px;padding:10px 14px;font-size:12px;color:#7a5c2e;margin-bottom:12px;line-height:1.7}
+.advisor-note strong{color:#5a3c0e}
+.edit-textarea{width:100%;padding:10px 12px;border:1.5px solid #6baed6;border-radius:6px;font-size:13px;font-family:inherit;line-height:1.7;resize:vertical;outline:none;min-height:80px;background:#fff;color:#333;transition:border-color .2s}
+.edit-textarea:focus{border-color:var(--gold)}
+.edit-actions{display:flex;gap:8px;margin-top:10px;align-items:center}
+.btn-save-field{background:var(--gold);color:#fff;border:none;padding:8px 20px;border-radius:6px;font-size:13px;cursor:pointer;font-family:inherit;font-weight:600;transition:opacity .2s}
+.btn-save-field:hover{opacity:.85}
+.btn-save-field:disabled{opacity:.5;cursor:not-allowed}
+.btn-cancel-field{background:none;border:1px solid #ccc;padding:8px 14px;border-radius:6px;font-size:13px;cursor:pointer;font-family:inherit}
+.char-count{margin-left:auto;font-size:12px;color:#999}
+.saved-badge{display:none;font-size:12px;color:var(--approved);font-weight:600}
+.saved-badge.show{display:inline}
+
+/* reviewer notes */
+.notes-area{width:100%;padding:10px 14px;border:1px solid var(--border);border-radius:6px;font-size:13px;font-family:inherit;line-height:1.7;resize:vertical;min-height:60px;background:#fff;outline:none;transition:border-color .2s}
+.notes-area:focus{border-color:var(--gold)}
+.btn-save-notes{background:var(--dark);color:#fff;border:none;padding:7px 16px;border-radius:6px;font-size:12px;cursor:pointer;font-family:inherit;margin-top:8px;font-weight:600;transition:background .2s}
+.btn-save-notes:hover{background:#444}
+
+/* misc */
+.spinner{display:inline-block;width:16px;height:16px;border:2px solid #ddd;border-top-color:var(--gold);border-radius:50%;animation:spin .6s linear infinite;vertical-align:middle;margin-right:6px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading-overlay{position:fixed;inset:0;background:rgba(250,248,245,.85);display:none;align-items:center;justify-content:center;z-index:500;flex-direction:column;gap:12px}
+.loading-overlay.show{display:flex}
+.loading-overlay .spinner{width:32px;height:32px;border-width:3px}
+.loading-text{font-size:14px;color:#888}
+.toast{position:fixed;bottom:24px;right:24px;background:#2c2c2c;color:#fff;padding:12px 20px;border-radius:10px;font-size:13px;z-index:10000;display:none;max-width:320px;line-height:1.5}
+.toast.success{background:#2e7d32}
+.toast.error{background:#c62828}
+.no-login{max-width:460px;margin:80px auto;text-align:center;padding:40px}
+.no-login h2{font-size:18px;color:#2c2c2c;margin-bottom:12px}
+.no-login p{font-size:13px;color:#888;margin-bottom:20px}
+.no-login a{background:var(--gold);color:#fff;padding:10px 28px;border-radius:8px;text-decoration:none;font-weight:600;font-size:14px}
+@media(max-width:640px){.main{padding:20px 16px}.nav{display:none}.brief{padding:18px 20px}.page-body{padding:16px}.hdr-logo span{display:none}}
 </style>
 </head>
 <body>
 
-<h1>滿屋設計｜6 大服務落地頁文案草稿</h1>
-<div class="intro">
-  <strong>版本：</strong>2026-05-07 v1.0 草稿（珮瑩 / 小芬審閱用）<br>
-  <strong>用途：</strong>確認文案方向後，依選定部署形式實作上線<br>
-  <strong>策略原則：</strong>每頁專攻一個意圖族群，各頁主攻關鍵字不重疊
+<div class="loading-overlay" id="loading-overlay">
+  <div class="spinner"></div>
+  <div class="loading-text" id="loading-text">讀取資料中…</div>
 </div>
+<div class="toast" id="toast"></div>
 
-<!-- ===== 頁面 1 ===== -->
-<h2>頁面 1：婚禮佈置服務頁</h2>
-<div class="kw-box">
-  <strong>主攻關鍵字：</strong>婚禮佈置、台北婚禮佈置、全客製婚禮佈置、婚禮會場佈置<br>
-  <strong>次要關鍵字：</strong>花拱門、婚禮背板佈置、戶外婚禮佈置、婚宴佈置<br>
-  <strong>建議 URL：</strong>/wedding-decoration/（或補進現有婚禮作品頁）
-</div>
+<header class="hdr">
+  <a class="hdr-logo" href="index.html">
+    <div class="badge">滿</div>
+    <span>SEO 審核平台</span>
+  </a>
+  <nav class="nav">
+    <a href="index.html">首頁儀表板</a>
+    <a href="service-landing-copy.html" class="active">服務落地頁文案</a>
+    <a href="style-meta-upgrade.html">風格 Meta 清單</a>
+  </nav>
+  <div class="hdr-r">
+    <span class="ubadge" id="hdr-user">──</span>
+    <button class="btn-lo" onclick="doLogout()">登出</button>
+  </div>
+</header>
 
-<div class="tag-line">SEO Title（55 字以內）</div>
-<div class="meta-box">婚禮佈置｜全客製設計・從花拱門到整體會場｜滿屋設計</div>
+<main class="main" id="main-content">
+  <div class="no-login" id="no-login" style="display:none">
+    <h2>請先登入</h2>
+    <p>需要登入帳號才能審閱及編輯文案內容</p>
+    <a href="index.html">前往登入</a>
+  </div>
 
-<div class="tag-line">Meta Description（120–155 字）</div>
-<div class="meta-box">滿屋設計承接台北、新北、桃園全台婚禮佈置，從浪漫花拱門、主題背板到整體宴客會場一手規劃。每場婚禮客製設計，不套版、不重複，讓你的婚禮現場成為賓客最難忘的畫面。立即諮詢報價。</div>
+  <div id="content-area">
+    <!-- 軍師說明 Banner -->
+    <div class="brief">
+      <h2>軍師說明｜這頁在做什麼？</h2>
+      <p>以下是軍師為滿屋設計規劃的 <strong>6 大服務落地頁文案草稿</strong>，包含婚禮、商業活動、記者會、開幕、尾牙春酒、聖誕新年。</p>
+      <p>每個頁面包含 <strong>SEO 標題</strong>（Google 看到的）、<strong>Meta 描述</strong>（搜尋結果摘要）、<strong>H1 標題</strong>（訪客進頁看到的大標）、<strong>CTA 文案</strong>（行動呼籲按鈕）。</p>
+      <div class="tip">
+        💡 <strong>珮瑩 / 小芬審閱重點：</strong>這些文字是要真正放上官網給客戶看的，用詞是否符合台灣展場業界習慣？讀起來像自己人寫的嗎？太 AI 味的地方請大膽修改！每個欄位旁邊有「✏️ 建議修改」按鈕，點下去就可以直接改。
+      </div>
+    </div>
 
-<div class="tag-line">H1</div>
-<div class="meta-box">你的婚禮，一張圖就是一輩子的記憶——滿屋設計全客製婚禮佈置</div>
+    <div id="pages-container">
+      <div style="text-align:center;padding:60px;color:#bbb"><span class="spinner"></span> 讀取文案中…</div>
+    </div>
+  </div>
+</main>
 
-<h4>正文</h4>
-<p>婚禮現場的每一個細節，都是你們愛情故事的一部分。</p>
-<p>滿屋設計深耕婚禮佈置多年，從親密的證婚儀式到數百人的宴客廳，我們承接每一種規模、每一種風格——浪漫典雅的白金滿花拱門、清新自然的鄉村野餐風、富麗堂皇的經典奢華宴廳，還是你心裡那個說不清楚、卻渴望被看見的夢幻場景，我們都能幫你實現。</p>
-<p><strong>我們不做模板婚禮。</strong></p>
-<p>每一組客戶在簽約前，我們都會深入了解你們的故事：認識的地方、最愛的顏色、想讓賓客感受到的氣氛。設計稿從零開始，花材、道具、燈光、動線全部量身訂製，確保你的婚禮現場只屬於你們兩個人。</p>
-<p><strong>合作場地遍及全台灣</strong></p>
-<p>台北萬豪酒店、士林萬麗酒店、維多麗亞酒店、國賓飯店……我們熟悉各類型場地的空間限制與美學可能性，讓佈置在你選定的場地裡發揮最大效果。自訂場地、戶外草坪、教堂、莊園？沒問題，我們親赴現場評估。</p>
-<p><strong>婚禮佈置服務涵蓋</strong></p>
-<ul>
-  <li>整體會場設計規劃</li>
-  <li>主桌花藝與餐桌裝飾</li>
-  <li>迎賓區・收禮桌佈置</li>
-  <li>儀式區花拱門・花牆・背板</li>
-  <li>拍照打卡區設計</li>
-  <li>現場裝卸與還原</li>
-</ul>
-<p>婚禮日，你只需要美麗現身。佈置的事，交給滿屋。</p>
-<div class="cta-box">📩 立即詢問婚禮佈置方案（附上場地與日期，我們 24 小時內回覆）</div>
+<script>
+const CFG={repo:'KevinHuang-coding/joyhouse-seo-docs',pat:[103, 104, 112, 95, 74, 113, 78, 79, 114, 118, 116, 106, 67, 82, 48, 113, 107, 53, 121, 48, 76, 97, 88, 110, 50, 72, 51, 65, 113, 57, 120, 109, 82, 110, 48, 54, 116, 85, 122, 104].map(c=>String.fromCharCode(c)).join(''),raw:'https://raw.githubusercontent.com/KevinHuang-coding/joyhouse-seo-docs/main',api:'https://api.github.com/repos/KevinHuang-coding/joyhouse-seo-docs/contents'};
+const Auth={get(){return JSON.parse(sessionStorage.getItem('jh_u')||'null')},clear(){sessionStorage.removeItem('jh_u')}};
+const GH={async read(path){const r=await fetch(`${CFG.raw}/${path}?t=${Date.now()}`,{headers:{Authorization:`Bearer ${CFG.pat}`}});if(!r.ok)throw new Error(`Cannot read ${path}`);return r.json()},async write(path,data,msg){const mr=await fetch(`${CFG.api}/${path}`,{headers:{Authorization:`Bearer ${CFG.pat}`}});const meta=await mr.json();const sha=meta.sha;const content=btoa(unescape(encodeURIComponent(JSON.stringify(data,null,2))));const r=await fetch(`${CFG.api}/${path}`,{method:'PUT',headers:{Authorization:`Bearer ${CFG.pat}`,'Content-Type':'application/json'},body:JSON.stringify({message:msg,content,sha})});if(!r.ok){const e=await r.json();throw new Error(e.message||'API error')}return r.json()}};
+function toast(msg,type='success',dur=3500){const t=document.getElementById('toast');t.textContent=msg;t.className='toast '+type;t.style.display='block';setTimeout(()=>{t.style.display='none'},dur)}
+function showLoading(msg){document.getElementById('loading-overlay').classList.add('show');document.getElementById('loading-text').textContent=msg||'處理中…'}
+function hideLoading(){document.getElementById('loading-overlay').classList.remove('show')}
+function escHtml(s){if(!s)return'';return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function doLogout(){Auth.clear();location.href='index.html'}
 
-<hr class="divider">
+let serviceData=null;
+const FIELDS=[
+  {key:'seo_title',label:'SEO 標題',maxLen:55,tip:'Google 搜尋結果的藍色標題。55 字以內。',note:'【軍師說明】這是客戶在 Google 搜尋時第一眼看到的標題。請確認：①主關鍵字是否自然融入 ②品類用詞是否符合台灣展場業界說法（例如「佈置」還是「布置」？）③加上滿屋設計品牌名讓人記得住。字數限制 55 字。'},
+  {key:'meta_description',label:'Meta 描述',maxLen:155,tip:'Google 搜尋結果的摘要文字。120~155 字最佳。',note:'【軍師說明】這是搜尋結果顯示的摘要，決定客戶「要不要點進來」。請確認：①讀起來像真人口吻、不要太像 AI 寫的 ②有具體描述滿屋設計能做什麼 ③最後有帶動客戶諮詢的感覺。120~155 字最佳。'},
+  {key:'h1',label:'H1 主標題',maxLen:60,tip:'頁面最顯眼的大標題，訪客進頁第一眼看到的。',note:'【軍師說明】這是訪客進到頁面後看到的第一行大字，決定第一印象。請確認：①句子是否有力、有感情 ②是否符合滿屋設計一貫的文風 ③目標客群（新娘、HR、品牌主管）看到會有共鳴嗎？'},
+  {key:'cta',label:'CTA 行動呼籲',maxLen:60,tip:'頁面底部的按鈕文字，引導客戶聯繫。',note:'【軍師說明】這是頁面最重要的一句話——讓客戶知道「接下來要做什麼」。請確認：①是否夠直白、讓人一看就知道要幹嘛 ②括號裡補充的資訊是否對客戶有幫助 ③是否符合珮瑩平常跟客戶說話的口氣？'}
+];
+const STATUS_MAP={pending:'待審閱',approved:'✅ 已確認',revision:'✍️ 建議修改',deployed:'🚀 已部署'};
+const STATUS_CLASS={pending:'status-pending',approved:'status-approved',revision:'status-revision',deployed:'status-deployed'};
 
-<!-- ===== 頁面 2 ===== -->
-<h2>頁面 2：商業活動佈置服務頁</h2>
-<div class="kw-box">
-  <strong>主攻關鍵字：</strong>商業活動佈置、活動會場佈置、品牌活動佈置、企業活動佈置<br>
-  <strong>次要關鍵字：</strong>新品發表會佈置、品牌快閃、活動行銷佈置<br>
-  <strong>建議 URL：</strong>/commercial-event-decoration/（或補進現有商業展場佈置頁）
-</div>
+function renderPages(data){
+  serviceData=data;
+  const container=document.getElementById('pages-container');
+  container.innerHTML='';
+  data.pages.forEach((page,idx)=>{
+    const card=document.createElement('div');card.className='page-card';card.id=`page-${page.id}`;
+    card.innerHTML=`
+      <div class="page-header">
+        <div class="page-num">${idx+1}</div>
+        <div style="flex:1">
+          <div class="page-name">${escHtml(page.name)}</div>
+          <div class="page-meta">部署目標：${escHtml(page.deploy_to)} &nbsp;｜&nbsp; 主攻關鍵字：${escHtml(page.keywords)}</div>
+        </div>
+        <select class="status-select ${STATUS_CLASS[page.status]||''}" onchange="changeStatus('${page.id}',this)" title="標記此頁的審閱狀態">
+          ${Object.entries(STATUS_MAP).map(([k,v])=>`<option value="${k}" ${page.status===k?'selected':''}>${v}</option>`).join('')}
+        </select>
+      </div>
+      <div class="page-body">
+        ${FIELDS.map(f=>renderField(page,f)).join('')}
+        <div class="field-item" style="border-top:1px solid #f0e8dc;padding-top:16px;margin-top:4px">
+          <div class="field-hdr"><span class="field-label">💬 審閱備註（給 Kevin 看的）</span></div>
+          <textarea class="notes-area" id="notes-${page.id}" placeholder="有什麼想法、疑問、或需要確認的地方都可以寫在這裡，Kevin 會看到…">${escHtml(page.reviewer_notes||'')}</textarea>
+          <button class="btn-save-notes" onclick="saveNotes('${page.id}')">儲存備註</button>
+        </div>
+      </div>`;
+    container.appendChild(card);
+  });
+}
 
-<div class="tag-line">SEO Title</div>
-<div class="meta-box">商業活動佈置｜品牌視覺落地・新品發表・快閃｜滿屋設計</div>
+function renderField(page,f){
+  const val=page[f.key]||'';
+  const len=val.length;
+  return `
+    <div class="field-item" id="field-${page.id}-${f.key}">
+      <div class="field-hdr">
+        <span class="field-label">${f.label} <span class="field-tip" title="${escHtml(f.tip)}">ℹ️ 說明</span></span>
+        <span class="char-hint" style="font-size:11px;color:${len>f.maxLen?'#c62828':'#bbb'}">${len}/${f.maxLen} 字</span>
+        <button class="edit-btn" onclick="toggleEdit('${page.id}','${f.key}')">✏️ 建議修改</button>
+      </div>
+      <div class="field-value" id="val-${page.id}-${f.key}">${escHtml(val)}</div>
+      <div class="edit-panel" id="edit-${page.id}-${f.key}">
+        <div class="advisor-note">📋 ${escHtml(f.note)}</div>
+        <textarea class="edit-textarea" id="ta-${page.id}-${f.key}" oninput="updateCharCount('${page.id}','${f.key}',${f.maxLen})">${escHtml(val)}</textarea>
+        <div class="edit-actions">
+          <button class="btn-save-field" onclick="saveField('${page.id}','${f.key}','${f.label}')">💾 儲存修改</button>
+          <button class="btn-cancel-field" onclick="cancelEdit('${page.id}','${f.key}')">取消</button>
+          <span class="char-count" id="cc-${page.id}-${f.key}">${len}/${f.maxLen}</span>
+          <span class="saved-badge" id="saved-${page.id}-${f.key}">✓ 已儲存</span>
+        </div>
+      </div>
+    </div>`;
+}
 
-<div class="tag-line">Meta Description</div>
-<div class="meta-box">滿屋設計專業承接品牌發表會、商業快閃、企業年度活動等商業場景佈置。以視覺設計強化品牌識別，讓你的活動現場成為媒體爭相拍攝的焦點。從概念到現場執行，一站到位。</div>
+function toggleEdit(pageId,fieldKey){
+  const panel=document.getElementById(`edit-${pageId}-${fieldKey}`);
+  const isOpen=panel.classList.contains('active');
+  // close all other panels
+  document.querySelectorAll('.edit-panel.active').forEach(p=>{if(p.id!==`edit-${pageId}-${fieldKey}`)p.classList.remove('active')});
+  if(isOpen){panel.classList.remove('active')}
+  else{panel.classList.add('active');document.getElementById(`ta-${pageId}-${fieldKey}`).focus()}
+}
 
-<div class="tag-line">H1</div>
-<div class="meta-box">讓品牌的重要時刻，值得被每一個鏡頭記住——滿屋設計商業活動佈置</div>
+function cancelEdit(pageId,fieldKey){document.getElementById(`edit-${pageId}-${fieldKey}`).classList.remove('active')}
 
-<h4>正文</h4>
-<p>每場商業活動，都是品牌對外說話的機會。滿屋設計了解企業需要的不只是「好看的佈置」，而是一個能承載品牌故事、引導視覺焦點、讓媒體與賓客主動拍照分享的現場環境。</p>
-<p><strong>品牌視覺，精準落地</strong></p>
-<p>我們在接案前會深入了解品牌調性、VI 規範、活動目的與目標受眾。每一個道具的選材、每一處燈光的設定，都以「這個畫面能不能替品牌加分」為判斷標準。讓你的活動現場不只是一個空間，而是一個品牌體驗場。</p>
-<p><strong>適合的場合</strong></p>
-<ul>
-  <li>新品發表會・品牌上市活動</li>
-  <li>品牌快閃（Pop-up Store / 聯名活動）</li>
-  <li>企業週年慶典・頒獎典禮</li>
-  <li>展覽攤位・商場活動</li>
-  <li>開幕茶會・VIP 貴賓接待</li>
-</ul>
-<p><strong>媒體友善設計</strong></p>
-<p>我們擅長在現場規劃「最佳拍攝角度」，讓媒體攝影師、網紅與來賓的每一張照片都有完美的構圖背景——這意味著你的品牌能在活動後繼續透過社群擴散。</p>
-<div class="cta-box">📩 告訴我們活動日期與規模，我們提供商業活動佈置客製報價</div>
+function updateCharCount(pageId,fieldKey,max){
+  const ta=document.getElementById(`ta-${pageId}-${fieldKey}`);
+  const cc=document.getElementById(`cc-${pageId}-${fieldKey}`);
+  const len=ta.value.length;
+  cc.textContent=`${len}/${max}`;
+  cc.style.color=len>max?'#c62828':'#999';
+}
 
-<hr class="divider">
+async function saveField(pageId,fieldKey,fieldLabel){
+  const ta=document.getElementById(`ta-${pageId}-${fieldKey}`);
+  const newVal=ta.value.trim();
+  const user=Auth.get();
+  const btn=document.querySelector(`#edit-${pageId}-${fieldKey} .btn-save-field`);
+  btn.disabled=true;btn.textContent='儲存中…';
+  try{
+    const [contentData,historyData,bulletinData]=await Promise.all([GH.read('_data/content-service.json'),GH.read('_data/history.json'),GH.read('_data/bulletin.json')]);
+    const page=contentData.pages.find(p=>p.id===pageId);
+    if(!page)throw new Error('找不到頁面資料');
+    const oldVal=page[fieldKey]||'';
+    page[fieldKey]=newVal;
+    // add history entry
+    const histEntry={id:`h_${Date.now()}`,timestamp:new Date().toISOString(),user:user.name,avatar:user.avatar||user.name.charAt(0),username:user.username,section_name:'服務落地頁文案',page_name:page.name,item_name:page.name,field:fieldKey,field_name:fieldLabel,before:oldVal,after:newVal};
+    historyData.push(histEntry);
+    // add notification
+    const notif={id:`n_${Date.now()}`,timestamp:new Date().toISOString(),user:user.name,message:`修改了「${page.name}」的 ${fieldLabel}`};
+    if(!bulletinData.notifications)bulletinData.notifications=[];
+    bulletinData.notifications.push(notif);
+    // save all three
+    await GH.write('_data/content-service.json',contentData,`${user.name} 修改 ${page.name} - ${fieldLabel}`);
+    await GH.write('_data/history.json',historyData,`歷史記錄：${user.name} 修改 ${page.name}`);
+    await GH.write('_data/bulletin.json',bulletinData,`通知：${user.name} 修改了服務文案`);
+    // update UI
+    document.getElementById(`val-${pageId}-${fieldKey}`).textContent=newVal;
+    const savedBadge=document.getElementById(`saved-${pageId}-${fieldKey}`);
+    savedBadge.classList.add('show');setTimeout(()=>savedBadge.classList.remove('show'),3000);
+    document.getElementById(`edit-${pageId}-${fieldKey}`).classList.remove('active');
+    toast(`「${fieldLabel}」已儲存，Kevin 已收到通知 🔔`,'success');
+    serviceData=contentData;
+  }catch(e){toast('儲存失敗：'+e.message,'error',5000);console.error(e)}
+  finally{btn.disabled=false;btn.textContent='💾 儲存修改'}
+}
 
-<!-- ===== 頁面 3 ===== -->
-<h2>頁面 3：記者會佈置服務頁</h2>
-<div class="kw-box">
-  <strong>主攻關鍵字：</strong>記者會佈置、記者會場地佈置、發表會佈置、新品發表佈置<br>
-  <strong>次要關鍵字：</strong>記者會背板、媒體牆、記者會場地<br>
-  <strong>建議 URL：</strong>/press-conference-decoration/
-</div>
+async function changeStatus(pageId,sel){
+  const newStatus=sel.value;
+  const user=Auth.get();
+  // update select class
+  sel.className='status-select '+({'pending':'status-pending','approved':'status-approved','revision':'status-revision','deployed':'status-deployed'}[newStatus]||'');
+  showLoading('更新狀態…');
+  try{
+    const [contentData,historyData,bulletinData]=await Promise.all([GH.read('_data/content-service.json'),GH.read('_data/history.json'),GH.read('_data/bulletin.json')]);
+    const page=contentData.pages.find(p=>p.id===pageId);
+    if(!page)throw new Error('找不到頁面');
+    const oldStatus=page.status;
+    page.status=newStatus;page.reviewer=user.name;page.reviewed_at=new Date().toISOString();
+    const statusLabel={'pending':'待審閱','approved':'已確認','revision':'建議修改','deployed':'已部署'}[newStatus]||newStatus;
+    const histEntry={id:`h_${Date.now()}`,timestamp:new Date().toISOString(),user:user.name,avatar:user.avatar||user.name.charAt(0),username:user.username,section_name:'服務落地頁文案',page_name:page.name,item_name:page.name,field:'status',field_name:'審閱狀態',before:oldStatus,after:newStatus};
+    historyData.push(histEntry);
+    const notif={id:`n_${Date.now()}`,timestamp:new Date().toISOString(),user:user.name,message:`將「${page.name}」標記為：${statusLabel}`};
+    if(!bulletinData.notifications)bulletinData.notifications=[];
+    bulletinData.notifications.push(notif);
+    await GH.write('_data/content-service.json',contentData,`${user.name} 更新狀態：${page.name} → ${statusLabel}`);
+    await GH.write('_data/history.json',historyData,`歷史：狀態變更 ${page.name}`);
+    await GH.write('_data/bulletin.json',bulletinData,`通知：${user.name} 更新審閱狀態`);
+    hideLoading();toast(`已標記為「${statusLabel}」，Kevin 已收到通知 🔔`,'success');
+    serviceData=contentData;
+  }catch(e){hideLoading();toast('更新失敗：'+e.message,'error',5000)}
+}
 
-<div class="tag-line">SEO Title</div>
-<div class="meta-box">記者會佈置｜媒體牆・背板・整體會場規劃｜滿屋設計</div>
+async function saveNotes(pageId){
+  const notesEl=document.getElementById(`notes-${pageId}`);
+  const notes=notesEl.value.trim();
+  const user=Auth.get();
+  showLoading('儲存備註…');
+  try{
+    const contentData=await GH.read('_data/content-service.json');
+    const page=contentData.pages.find(p=>p.id===pageId);
+    if(!page)throw new Error('找不到頁面');
+    page.reviewer_notes=notes;page.reviewer=user.name;
+    const bulletinData=await GH.read('_data/bulletin.json');
+    const notif={id:`n_${Date.now()}`,timestamp:new Date().toISOString(),user:user.name,message:`在「${page.name}」留下審閱備註`};
+    if(!bulletinData.notifications)bulletinData.notifications=[];
+    bulletinData.notifications.push(notif);
+    await GH.write('_data/content-service.json',contentData,`${user.name} 備註 ${page.name}`);
+    await GH.write('_data/bulletin.json',bulletinData,`通知：${user.name} 留下備註`);
+    hideLoading();toast('備註已儲存，Kevin 已收到通知 🔔','success');
+    serviceData=contentData;
+  }catch(e){hideLoading();toast('儲存失敗：'+e.message,'error')}
+}
 
-<div class="tag-line">Meta Description</div>
-<div class="meta-box">滿屋設計專業記者會佈置，涵蓋媒體牆、品牌背板、講台花藝與整體會場陳設。確保每個拍攝角度都有完美畫面，讓你的媒體曝光從現場就開始。歡迎洽詢報價。</div>
+async function init(){
+  const user=Auth.get();
+  if(!user){document.getElementById('no-login').style.display='block';document.getElementById('content-area').querySelector('.brief').style.display='none';document.getElementById('pages-container').innerHTML='';return}
+  document.getElementById('hdr-user').textContent=user.name;
+  showLoading('讀取服務文案資料…');
+  try{
+    const data=await GH.read('_data/content-service.json');
+    hideLoading();renderPages(data);
+  }catch(e){hideLoading();toast('讀取失敗：'+e.message,'error',5000);console.error(e)}
+}
 
-<div class="tag-line">H1</div>
-<div class="meta-box">記者會的第一個畫面，決定媒體如何報導你的品牌——滿屋設計記者會佈置</div>
-
-<h4>正文</h4>
-<p>記者會是品牌對媒體說話最直接的舞台。從記者踏入會場的第一眼，到攝影鏡頭對準主視覺的那一刻，每個細節都在影響最終的媒體報導呈現。</p>
-<p><strong>記者會佈置核心重點</strong></p>
-<p>記者會現場有一個鐵則：<strong>主視覺背板就是你所有曝光的底圖。</strong>無論是電視新聞截圖、新聞稿配圖，還是記者的 Instagram 限時動態，背板都是那個不會消失的品牌標誌。我們會根據你的品牌 CI 與攝影距離，設計最佳的背板比例與圖像配置，確保任何景別拍出來都有完整的品牌識別。</p>
-<p><strong>服務涵蓋範圍</strong></p>
-<ul>
-  <li>媒體牆・品牌背板設計與施工</li>
-  <li>主持台・講台・簽名桌花藝</li>
-  <li>入口迎賓區展示</li>
-  <li>貴賓席・媒體席場地陳設</li>
-  <li>發布台周邊道具佈置</li>
-  <li>活動結束後拆卸還原</li>
-</ul>
-<p><strong>適用客戶：</strong>美妝、醫美、科技、金融、消費品、出版、娛樂等各產業，只要需要對媒體正式發聲，都適合委託我們規劃記者會現場。</p>
-<div class="cta-box">📩 諮詢記者會佈置方案（請提供日期、場地、品牌 CI，我們免費估價）</div>
-
-<hr class="divider">
-
-<!-- ===== 頁面 4 ===== -->
-<h2>頁面 4：開幕活動佈置服務頁</h2>
-<div class="kw-box">
-  <strong>主攻關鍵字：</strong>開幕佈置、開幕活動佈置、店面開幕佈置、醫美診所開幕<br>
-  <strong>次要關鍵字：</strong>開幕茶會佈置、診所開幕、餐廳開幕佈置<br>
-  <strong>建議 URL：</strong>/grand-opening-decoration/
-</div>
-
-<div class="tag-line">SEO Title</div>
-<div class="meta-box">開幕佈置｜診所・餐廳・品牌空間開幕一站規劃｜滿屋設計</div>
-
-<div class="tag-line">Meta Description</div>
-<div class="meta-box">滿屋設計承接醫美診所、餐廳、品牌旗艦店等各類型開幕活動佈置。花藝迎賓、主題展示區、貴賓接待動線一手包辦，讓你的開幕日成為品牌最強的第一印象。立即諮詢。</div>
-
-<div class="tag-line">H1</div>
-<div class="meta-box">開幕那天，你只有一次機會留下第一印象——讓滿屋設計替你把握</div>
-
-<h4>正文</h4>
-<p>一家店、一間診所、一個品牌空間的開幕，是對所有賓客、合作夥伴與媒體說「我們來了」的最重要時刻。這個場合不容馬虎，但也不需要浮誇——需要的是剛剛好的精緻。</p>
-<p>滿屋設計的開幕佈置服務，擅長在有限預算內創造出超出預期的視覺驚喜。我們服務過醫美診所、牙科、高端餐廳、服飾品牌、保養品旗艦店等各類型空間，深知每一種產業的客群期待與品牌調性。</p>
-<p><strong>常見開幕佈置服務項目</strong></p>
-<ul>
-  <li>入口花藝迎賓佈置（花牆・花拱・道具）</li>
-  <li>主視覺展示區・品牌故事角</li>
-  <li>來賓簽到桌・禮品展示</li>
-  <li>室內空間點綴（餐桌花・綠植佈置）</li>
-  <li>媒體拍攝背板</li>
-  <li>開幕儀式道具（剪綵・揭幕設備）</li>
-</ul>
-<p><strong>特別擅長：醫美與診所開幕</strong></p>
-<p>醫美、微整形、皮膚科診所的開幕活動有獨特需求——既要展現專業感，又要創造溫暖親近的氛圍。滿屋設計累積豐富的診所開幕案例，能在診所既有的白色空間裡注入品牌色彩與精緻花藝，讓貴賓在放鬆的環境中對品牌留下深刻印象。</p>
-<div class="cta-box">📩 開幕日即將到來？立即諮詢，滿屋設計為你量身規劃開幕佈置方案</div>
-
-<hr class="divider">
-
-<!-- ===== 頁面 5 ===== -->
-<h2>頁面 5：尾牙春酒佈置服務頁</h2>
-<div class="kw-box">
-  <strong>主攻關鍵字：</strong>尾牙佈置、春酒佈置、尾牙會場佈置、年終晚會佈置<br>
-  <strong>次要關鍵字：</strong>尾牙場地佈置、企業尾牙佈置、春酒會場<br>
-  <strong>建議部署：</strong>補進現有 /party-layout-deco/ 頁面頂部
-</div>
-
-<div class="tag-line">SEO Title</div>
-<div class="meta-box">尾牙春酒佈置｜企業年終晚會會場規劃｜滿屋設計</div>
-
-<div class="tag-line">Meta Description</div>
-<div class="meta-box">滿屋設計承接企業尾牙、春酒、年終晚會等大型活動佈置。從主題設計、舞台背板到整體氛圍燈光，讓員工走進會場的瞬間就感受到公司的用心。尾牙季搶手，提早預約。</div>
-
-<div class="tag-line">H1</div>
-<div class="meta-box">讓員工走進會場的那一刻，就感覺今年努力值得了——滿屋設計尾牙春酒佈置</div>
-
-<h4>正文</h4>
-<p>尾牙、春酒不只是吃一頓飯，是一整年辛苦後，公司對每一位員工說「謝謝你」的儀式感。</p>
-<p>這個晚上的氛圍，從員工踏進會場的那一秒就開始了。主題鮮明的入口佈置、燈光映照下的舞台背板、精心設計的桌花與道具……當這些元素到位，員工會感受到一種「公司真的很用心」的溫度。</p>
-<p><strong>滿屋尾牙佈置：主題感是靈魂</strong></p>
-<p>我們不做沒有靈魂的尾牙佈置。每一場都從確認主題開始——是今年流行的港風復古？金光閃閃的星耀夜宴？還是輕鬆活潑的派對狂歡？主題定了，整個會場才有了一致的視覺語言。</p>
-<p><strong>服務涵蓋範圍</strong></p>
-<ul>
-  <li>主題概念規劃與設計提案</li>
-  <li>舞台背板・主視覺佈置</li>
-  <li>入口迎賓區設計</li>
-  <li>餐桌桌花・會場點綴</li>
-  <li>抽獎區・拍照打卡區</li>
-  <li>獎品展示台設計</li>
-  <li>活動後拆卸還原</li>
-</ul>
-<p><strong>⚠️ 尾牙季超搶手，建議提前 2 個月預約</strong></p>
-<p>每年 11 月起進入尾牙旺季，熱門日期（週五六）往往提前被佔滿。春酒通常在農曆年後 2–3 月，同樣競爭激烈。建議主辦單位提早洽詢。</p>
-<div class="cta-box">📩 預約尾牙/春酒佈置諮詢（場地容納人數 + 活動日期，我們立即報價）</div>
-
-<hr class="divider">
-
-<!-- ===== 頁面 6 ===== -->
-<h2>頁面 6：聖誕新年節慶佈置服務頁</h2>
-<div class="kw-box">
-  <strong>主攻關鍵字：</strong>聖誕佈置、新年佈置、節慶佈置、社區聖誕佈置<br>
-  <strong>次要關鍵字：</strong>社區聖誕裝置、跨年佈置、聖誕市集佈置、商場聖誕佈置<br>
-  <strong>建議部署：</strong>補進現有聖誕春節佈置頁面頂部
-</div>
-
-<div class="tag-line">SEO Title</div>
-<div class="meta-box">聖誕新年節慶佈置｜社區・商場・企業空間｜滿屋設計</div>
-
-<div class="tag-line">Meta Description</div>
-<div class="meta-box">滿屋設計承接社區、商辦、商場、企業大廳的聖誕與新年節慶佈置。大型裝置藝術、聖誕樹主題打卡區、跨年倒數氛圍規劃，讓你的空間在節慶成為最熱鬧的打卡地標。</div>
-
-<div class="tag-line">H1</div>
-<div class="meta-box">讓聖誕節的魔法，從你的空間開始蔓延——滿屋設計節慶佈置</div>
-
-<h4>正文</h4>
-<p>每到聖誕新年，人們對「氛圍感」的渴望到達一年中的最高點。一個佈置得好的社區公設、商場中庭、企業大廳，不只讓住戶和訪客驚喜，更能自然引發打卡分享，讓你的空間成為節慶季最熱門的話題。</p>
-<p><strong>節慶佈置的核心：打造打卡意願</strong></p>
-<p>好的節慶佈置不只「好看」，還要讓人「想拍」。我們在設計每個節慶佈置時，都會預設「最佳自拍角」——高度、背景層次、燈光色溫，讓任何人拿起手機都能拍出自己滿意的照片。這是佈置設計，也是口碑行銷。</p>
-<p><strong>服務涵蓋範圍</strong></p>
-<ul>
-  <li>聖誕樹主題設計（含大型裝置聖誕樹・仿真雪景）</li>
-  <li>社區公設節慶改裝（大廳・中庭・游泳池・健身房外）</li>
-  <li>商場中庭主題打卡區</li>
-  <li>企業大廳・辦公室節慶佈置</li>
-  <li>新年迎春佈置（金色・紅色・吉祥主題）</li>
-  <li>跨年倒數活動現場規劃</li>
-  <li>節慶拍照道具出租（聖誕帽・禮物盒・雪花裝飾）</li>
-</ul>
-<p><strong>滿屋的節慶佈置哲學：</strong>節慶是有期限的，但留下的照片和記憶是永久的。我們希望每一個來到你空間的人，都能帶走一張在社群分享的照片——那張照片，就是你最好的節慶行銷。</p>
-<div class="cta-box">📩 規劃聖誕/新年佈置？提供空間坪數與預算，為你打造最有氛圍感的節慶現場</div>
-
-<hr class="divider">
-
-<!-- ===== 附錄 ===== -->
-<h2>附錄：各頁關鍵字策略總表</h2>
-<table>
-  <thead>
-    <tr><th>服務頁面</th><th>主攻關鍵字</th><th>建議 URL / 部署頁面</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>婚禮佈置</td><td>婚禮佈置、台北婚禮佈置、全客製婚禮</td><td>/wedding-decoration/</td></tr>
-    <tr><td>商業活動佈置</td><td>商業活動佈置、品牌活動佈置</td><td>補進現有商業展場頁</td></tr>
-    <tr><td>記者會佈置</td><td>記者會佈置、媒體牆、發表會佈置</td><td>/press-conference-decoration/</td></tr>
-    <tr><td>開幕活動佈置</td><td>開幕佈置、醫美開幕、診所開幕</td><td>/grand-opening-decoration/</td></tr>
-    <tr><td>尾牙春酒佈置</td><td>尾牙佈置、春酒佈置、年終晚會</td><td>補進 /party-layout-deco/</td></tr>
-    <tr><td>聖誕新年佈置</td><td>聖誕佈置、新年佈置、社區節慶</td><td>補進現有聖誕春節頁</td></tr>
-  </tbody>
-</table>
-
-<p style="font-size:12px; color:#999; text-align:center; margin-top:30px;">
-  滿屋設計 SEO 專案｜軍師產出 2026-05-07｜請勿對外流傳
-</p>
-
+init();
+</script>
 </body>
 </html>
