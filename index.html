@@ -4,6 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>滿屋設計｜SEO 審核協作平台</title>
+<link rel="manifest" href="manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="滿屋SEO">
+<link rel="apple-touch-icon" href="icon.png">
+<meta name="theme-color" content="#c8a96e">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -27,6 +33,7 @@ body{font-family:"Microsoft JhengHei","PingFang TC",sans-serif;background:var(--
 .fg select:focus,.fg input:focus{border-color:var(--gold)}
 .btn-login{width:100%;padding:13px;background:var(--dark);color:#fff;border:none;border-radius:8px;font-size:15px;font-family:inherit;cursor:pointer;margin-top:8px;font-weight:600;letter-spacing:.5px;transition:background .2s}
 .btn-login:hover{background:#444}
+.btn-login:active{background:#555}
 .l-err{background:var(--pending-bg);color:var(--pending);padding:10px 14px;border-radius:6px;font-size:13px;margin-top:12px;display:none}
 #app{display:none}
 .hdr{background:#2c2c2c;color:#fff;padding:0 24px;height:56px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.3)}
@@ -124,17 +131,17 @@ body{font-family:"Microsoft JhengHei","PingFang TC",sans-serif;background:var(--
 .toast{position:fixed;bottom:24px;right:24px;background:#2c2c2c;color:#fff;padding:12px 20px;border-radius:10px;font-size:13px;z-index:10000;display:none;max-width:320px;line-height:1.5}
 .toast.success{background:#2e7d32}
 .toast.error{background:#c62828}
-.modal-mask{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:8000;display:none;align-items:center;justify-content:center}
+.modal-mask{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:8000;display:none;align-items:center;justify-content:center;padding:20px}
 .modal-mask.show{display:flex}
-.modal-box{background:#fff;border-radius:16px;padding:28px 28px 22px;width:90%;max-width:380px;box-shadow:0 16px 48px rgba(0,0,0,.3)}
+.modal-box{background:#fff;border-radius:16px;padding:28px 28px 22px;width:100%;max-width:380px;box-shadow:0 16px 48px rgba(0,0,0,.3)}
 .modal-box h3{font-size:15px;font-weight:700;margin-bottom:6px;color:#2c2c2c}
 .modal-box p{font-size:12px;color:#888;margin-bottom:16px}
-.modal-box input{width:100%;padding:11px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:15px;font-family:inherit;outline:none;transition:border-color .2s;margin-bottom:14px}
+.modal-box input{width:100%;padding:11px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:16px;font-family:inherit;outline:none;transition:border-color .2s;margin-bottom:14px}
 .modal-box input:focus{border-color:var(--gold)}
 .modal-btns{display:flex;gap:10px}
-.modal-btns .btn-ok{flex:1;background:var(--dark);color:#fff;border:none;padding:11px;border-radius:8px;font-size:14px;cursor:pointer;font-family:inherit;font-weight:600}
+.modal-btns .btn-ok{flex:1;background:var(--dark);color:#fff;border:none;padding:12px;border-radius:8px;font-size:14px;cursor:pointer;font-family:inherit;font-weight:600}
 .modal-btns .btn-ok:hover{background:#444}
-.modal-btns .btn-cx{background:none;border:1px solid #ccc;padding:11px 16px;border-radius:8px;font-size:14px;cursor:pointer;font-family:inherit}
+.modal-btns .btn-cx{background:none;border:1px solid #ccc;padding:12px 16px;border-radius:8px;font-size:14px;cursor:pointer;font-family:inherit}
 .page-nav{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:32px}
 .page-nav a{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:16px 20px;text-decoration:none;color:inherit;transition:box-shadow .2s,transform .2s}
 .page-nav a:hover{box-shadow:0 4px 16px rgba(0,0,0,.1);transform:translateY(-2px)}
@@ -155,6 +162,20 @@ body{font-family:"Microsoft JhengHei","PingFang TC",sans-serif;background:var(--
 </head>
 <body>
 
+<!-- 密碼修改 Modal -->
+<div class="modal-mask" id="pw-modal">
+  <div class="modal-box">
+    <h3>🔐 修改密碼</h3>
+    <p id="pw-modal-label">請輸入新密碼</p>
+    <input type="text" id="pw-modal-input" placeholder="輸入新密碼" autocomplete="off">
+    <div class="modal-btns">
+      <button class="btn-cx" onclick="closePwModal()">取消</button>
+      <button class="btn-ok" onclick="confirmPwChange()">確認修改</button>
+    </div>
+  </div>
+</div>
+
+<!-- 登入畫面 -->
 <div id="login-screen">
   <div class="lcard">
     <div class="l-logo">
@@ -175,20 +196,8 @@ body{font-family:"Microsoft JhengHei","PingFang TC",sans-serif;background:var(--
       <label>密碼</label>
       <input type="password" id="inp-pw" placeholder="輸入密碼" autocomplete="current-password">
     </div>
-    <button class="btn-login" onclick="doLogin()">登　入</button>
-    <div class="l-err" id="l-err">帳號或密碼錯誤，請重試</div>
-  </div>
-</div>
-
-<div class="modal-mask" id="pw-modal">
-  <div class="modal-box">
-    <h3>🔐 修改密碼</h3>
-    <p id="pw-modal-label">請輸入新密碼</p>
-    <input type="text" id="pw-modal-input" placeholder="新密碼" autocomplete="off">
-    <div class="modal-btns">
-      <button class="btn-cx" onclick="closePwModal()">取消</button>
-      <button class="btn-ok" onclick="confirmPwChange()">確認修改</button>
-    </div>
+    <button class="btn-login" id="btn-login">登　入</button>
+    <div class="l-err" id="l-err"></div>
   </div>
 </div>
 
@@ -200,50 +209,54 @@ body{font-family:"Microsoft JhengHei","PingFang TC",sans-serif;background:var(--
 
 <div id="app">
   <header class="hdr">
-    <a class="hdr-logo" href="index.html">
+    <a class="hdr-logo" href="#">
       <div class="badge">滿</div>
-      <span>SEO 審核平台</span>
+      <span>滿屋設計 SEO 平台</span>
     </a>
     <nav class="nav">
-      <a href="index.html" class="active">首頁儀表板</a>
-      <a href="service-landing-copy.html">服務落地頁文案</a>
-      <a href="style-meta-upgrade.html">風格 Meta 清單</a>
+      <a href="service-landing-copy.html">服務落地頁</a>
+      <a href="style-meta-upgrade.html">風格 Meta</a>
     </nav>
     <div class="hdr-r">
-      <span class="ubadge" id="hdr-user">──</span>
+      <span class="ubadge" id="hdr-user">—</span>
       <span class="notif-dot" id="notif-count" style="display:none">0</span>
       <button class="btn-lo" onclick="doLogout()">登出</button>
     </div>
   </header>
-
   <main class="main">
+    <div class="stats" id="stats-bar">
+      <div class="stat"><div class="num" id="s-total">—</div><div class="lbl">總項目</div></div>
+      <div class="stat"><div class="num" id="s-pending">—</div><div class="lbl">待審閱</div></div>
+      <div class="stat"><div class="num" id="s-approved">—</div><div class="lbl">已確認</div></div>
+      <div class="stat"><div class="num" id="s-revision">—</div><div class="lbl">需修改</div></div>
+      <div class="stat"><div class="num" id="s-deployed">—</div><div class="lbl">已上線</div></div>
+    </div>
+
     <div class="page-nav">
       <a href="service-landing-copy.html">
-        <div class="icon">📝</div>
-        <div><h3>服務落地頁文案</h3><p>6 大服務頁・SEO Title・Meta・H1・CTA</p></div>
+        <span class="icon">📄</span>
+        <div>
+          <h3>服務落地頁文案</h3>
+          <p>6 個服務頁 SEO 文案審閱</p>
+        </div>
         <span class="pending-count" id="service-pending">讀取中</span>
       </a>
       <a href="style-meta-upgrade.html">
-        <div class="icon">🏷️</div>
-        <div><h3>風格分類 Meta 清單</h3><p>22 個風格分類・SEO Title・Meta Description</p></div>
+        <span class="icon">🎨</span>
+        <div>
+          <h3>風格分類 Meta 清單</h3>
+          <p>22 個風格頁 Meta 升級</p>
+        </div>
         <span class="pending-count" id="meta-pending">讀取中</span>
       </a>
     </div>
 
-    <div class="stats" id="stats-bar">
-      <div class="stat"><div class="num" id="s-total">─</div><div class="lbl">總項目數</div></div>
-      <div class="stat"><div class="num" id="s-pending" style="color:#c62828">─</div><div class="lbl">待審閱</div></div>
-      <div class="stat"><div class="num" id="s-approved" style="color:#2e7d32">─</div><div class="lbl">已確認</div></div>
-      <div class="stat"><div class="num" id="s-revision" style="color:#e65100">─</div><div class="lbl">建議修改</div></div>
-      <div class="stat"><div class="num" id="s-deployed" style="color:#1565c0">─</div><div class="lbl">已部署</div></div>
-    </div>
-
     <div class="sec">
-      <div class="sec-hdr"><span class="sec-title">📊 進度追蹤</span></div>
-      <div class="card" style="padding:0;overflow:hidden">
+      <div class="sec-hdr"><span class="sec-title">📊 整體進度</span></div>
+      <div class="card">
         <table class="progress-table">
-          <thead><tr><th>內容類別</th><th>完成率</th><th>進度條</th><th>待審</th><th>已確認</th><th>建議修改</th></tr></thead>
-          <tbody id="progress-tbody"><tr><td colspan="6" class="no-data"><span class="spinner"></span> 讀取中…</td></tr></tbody>
+          <thead><tr><th>項目</th><th>完成率</th><th>進度條</th><th>待審</th><th>完成</th><th>需修改</th></tr></thead>
+          <tbody id="progress-tbody"></tbody>
         </table>
       </div>
     </div>
@@ -251,12 +264,12 @@ body{font-family:"Microsoft JhengHei","PingFang TC",sans-serif;background:var(--
     <div class="sec">
       <div class="sec-hdr">
         <span class="sec-title">📋 Kevin 交辦事項</span>
-        <button class="add-btn" id="add-task-btn" style="display:none" onclick="toggleAddForm()">＋ 新增交辦</button>
+        <button class="add-btn" id="add-task-btn" onclick="toggleAddForm()" style="display:none">＋ 新增交辦</button>
       </div>
       <div class="add-form" id="add-form">
-        <div class="frow">
+        <div class="frow" style="margin-bottom:0">
           <div>
-            <label style="font-size:12px;color:#666;font-weight:700;display:block;margin-bottom:4px">優先等級</label>
+            <label style="font-size:12px;color:#666;font-weight:700;display:block;margin-bottom:4px">優先級</label>
             <select id="new-prio"><option value="high">🔴 緊急</option><option value="medium" selected>🟡 一般</option><option value="low">🟢 低</option></select>
           </div>
           <div>
@@ -301,95 +314,175 @@ body{font-family:"Microsoft JhengHei","PingFang TC",sans-serif;background:var(--
 </div>
 
 <script>
-const CFG={repo:'KevinHuang-coding/joyhouse-seo-docs',pat:[103, 104, 112, 95, 74, 113, 78, 79, 114, 118, 116, 106, 67, 82, 48, 113, 107, 53, 121, 48, 76, 97, 88, 110, 50, 72, 51, 65, 113, 57, 120, 109, 82, 110, 48, 54, 116, 85, 122, 104].map(c=>String.fromCharCode(c)).join(''),raw:'https://raw.githubusercontent.com/KevinHuang-coding/joyhouse-seo-docs/main',api:'https://api.github.com/repos/KevinHuang-coding/joyhouse-seo-docs/contents'};
-const Auth={get(){return JSON.parse(sessionStorage.getItem('jh_u')||'null')},set(u){sessionStorage.setItem('jh_u',JSON.stringify(u))},clear(){sessionStorage.removeItem('jh_u')},isAdmin(){const u=this.get();return u&&u.role==='admin'},lastSeen(){return parseInt(localStorage.getItem('jh_ls')||'0')},touchSeen(){localStorage.setItem('jh_ls',Date.now())}};
-const GH={async read(path){const r=await fetch(`${CFG.raw}/${path}?t=${Date.now()}`);if(!r.ok)throw new Error(`Cannot read ${path}`);return r.json()},async write(path,data,msg){const mr=await fetch(`${CFG.api}/${path}`,{headers:{Authorization:`Bearer ${CFG.pat}`}});const meta=await mr.json();const sha=meta.sha;const content=btoa(unescape(encodeURIComponent(JSON.stringify(data,null,2))));const r=await fetch(`${CFG.api}/${path}`,{method:'PUT',headers:{Authorization:`Bearer ${CFG.pat}`,'Content-Type':'application/json'},body:JSON.stringify({message:msg,content,sha})});if(!r.ok){const e=await r.json();throw new Error(e.message||'API error')}return r.json()}};
-function toast(msg,type='success',dur=3500){const t=document.getElementById('toast');t.textContent=msg;t.className='toast '+type;t.style.display='block';setTimeout(()=>{t.style.display='none'},dur)}
-function showLoading(msg){document.getElementById('loading-overlay').classList.add('show');document.getElementById('loading-text').textContent=msg||'處理中…'}
+var CFG = {
+  repo: 'KevinHuang-coding/joyhouse-seo-docs',
+  pat: [103,104,112,95,74,113,78,79,114,118,116,106,67,82,48,113,107,53,121,48,76,97,88,110,50,72,51,65,113,57,120,109,82,110,48,54,116,85,122,104].map(function(c){return String.fromCharCode(c)}).join(''),
+  raw: 'https://raw.githubusercontent.com/KevinHuang-coding/joyhouse-seo-docs/main',
+  api: 'https://api.github.com/repos/KevinHuang-coding/joyhouse-seo-docs/contents'
+};
+
+var Auth = {
+  get: function(){return JSON.parse(sessionStorage.getItem('jh_u')||'null')},
+  set: function(u){sessionStorage.setItem('jh_u',JSON.stringify(u))},
+  clear: function(){sessionStorage.removeItem('jh_u')},
+  isAdmin: function(){var u=this.get();return u&&u.role==='admin'},
+  lastSeen: function(){return parseInt(localStorage.getItem('jh_ls')||'0')},
+  touchSeen: function(){localStorage.setItem('jh_ls',Date.now())}
+};
+
+var GH = {
+  read: async function(path){
+    var r = await fetch(CFG.raw+'/'+path+'?t='+Date.now());
+    if(!r.ok) throw new Error('Cannot read '+path+' (HTTP '+r.status+')');
+    return r.json();
+  },
+  write: async function(path, data, msg){
+    var mr = await fetch(CFG.api+'/'+path, {headers:{Authorization:'Bearer '+CFG.pat}});
+    var meta = await mr.json();
+    var sha = meta.sha;
+    var content = btoa(unescape(encodeURIComponent(JSON.stringify(data,null,2))));
+    var r = await fetch(CFG.api+'/'+path, {
+      method:'PUT',
+      headers:{Authorization:'Bearer '+CFG.pat,'Content-Type':'application/json'},
+      body: JSON.stringify({message:msg, content:content, sha:sha})
+    });
+    if(!r.ok){var e=await r.json();throw new Error(e.message||'API error')}
+    return r.json();
+  }
+};
+
+function toast(msg,type,dur){
+  type=type||'success';dur=dur||3500;
+  var t=document.getElementById('toast');
+  t.textContent=msg;t.className='toast '+type;t.style.display='block';
+  setTimeout(function(){t.style.display='none'},dur);
+}
+function showLoading(msg){
+  document.getElementById('loading-overlay').classList.add('show');
+  document.getElementById('loading-text').textContent=msg||'處理中…';
+}
 function hideLoading(){document.getElementById('loading-overlay').classList.remove('show')}
 function escHtml(s){if(!s)return'';return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
-function fmtTime(ts){if(!ts)return'';const d=new Date(ts);const now=new Date();const diff=Math.floor((now-d)/1000);if(diff<60)return'剛剛';if(diff<3600)return Math.floor(diff/60)+' 分鐘前';if(diff<86400)return Math.floor(diff/3600)+' 小時前';return d.toLocaleDateString('zh-TW')+' '+d.toLocaleTimeString('zh-TW',{hour:'2-digit',minute:'2-digit'})}
+function fmtTime(ts){
+  if(!ts)return'';
+  var d=new Date(ts),now=new Date();
+  var diff=Math.floor((now-d)/1000);
+  if(diff<60)return'剛剛';
+  if(diff<3600)return Math.floor(diff/60)+' 分鐘前';
+  if(diff<86400)return Math.floor(diff/3600)+' 小時前';
+  return d.toLocaleDateString('zh-TW')+' '+d.toLocaleTimeString('zh-TW',{hour:'2-digit',minute:'2-digit'});
+}
 
-document.getElementById('inp-pw').addEventListener('keydown',e=>{if(e.key==='Enter')doLogin()});
+// 登入邏輯
+document.getElementById('btn-login').addEventListener('click', doLogin);
+document.getElementById('inp-pw').addEventListener('keydown', function(e){if(e.key==='Enter')doLogin()});
 
 async function doLogin(){
-  const username=document.getElementById('sel-user').value;
-  const pw=document.getElementById('inp-pw').value;
-  const err=document.getElementById('l-err');
+  var username=document.getElementById('sel-user').value;
+  var pw=document.getElementById('inp-pw').value;
+  var err=document.getElementById('l-err');
   err.style.display='none';
   if(!username){err.textContent='請選擇帳號';err.style.display='block';return}
   if(!pw){err.textContent='請輸入密碼';err.style.display='block';return}
+  document.getElementById('btn-login').disabled=true;
   showLoading('驗證身份中…');
   try{
-    const users=await GH.read('_data/users.json');
-    const u=users[username];
-    if(!u||u.password!==pw){hideLoading();err.textContent='帳號或密碼錯誤，請重試';err.style.display='block';return}
-    Auth.set({username,name:u.name,role:u.role,avatar:u.avatar});
+    var users = await GH.read('_data/users.json');
+    var u = users[username];
+    if(!u||u.password!==pw){
+      hideLoading();
+      document.getElementById('btn-login').disabled=false;
+      err.textContent='帳號或密碼錯誤，請重試';err.style.display='block';
+      return;
+    }
+    Auth.set({username:username,name:u.name,role:u.role,avatar:u.avatar});
     Auth.touchSeen();
     hideLoading();
     bootApp();
-  }catch(e){hideLoading();err.textContent='連線失敗，請稍後再試';err.style.display='block';console.error(e)}
+  }catch(e){
+    hideLoading();
+    document.getElementById('btn-login').disabled=false;
+    err.textContent='連線失敗，請稍後再試';err.style.display='block';
+    console.error('Login error:',e);
+  }
 }
 
 function doLogout(){Auth.clear();location.reload()}
 
-function countStatuses(pages){const c={pending:0,approved:0,revision:0,deployed:0};pages.forEach(p=>{c[p.status]=(c[p.status]||0)+1});return c}
+function countStatuses(pages){
+  var c={pending:0,approved:0,revision:0,deployed:0};
+  pages.forEach(function(p){c[p.status]=(c[p.status]||0)+1});
+  return c;
+}
 
 function renderStats(svc,meta){
-  const all=[...svc.pages,...meta.pages];
-  const c=countStatuses(all);
+  var all=svc.pages.concat(meta.pages);
+  var c=countStatuses(all);
   document.getElementById('s-total').textContent=all.length;
   document.getElementById('s-pending').textContent=c.pending||0;
   document.getElementById('s-approved').textContent=c.approved||0;
   document.getElementById('s-revision').textContent=c.revision||0;
   document.getElementById('s-deployed').textContent=c.deployed||0;
-  const sp=countStatuses(svc.pages),mp=countStatuses(meta.pages);
-  const spEl=document.getElementById('service-pending'),mpEl=document.getElementById('meta-pending');
-  if((sp.pending||0)===0){spEl.textContent='全部完成 ✓';spEl.style.background='var(--approved-bg)';spEl.style.color='var(--approved)'}else{spEl.textContent=`${sp.pending||0} 待審`;spEl.style.background='';spEl.style.color=''}
-  if((mp.pending||0)===0){mpEl.textContent='全部完成 ✓';mpEl.style.background='var(--approved-bg)';mpEl.style.color='var(--approved)'}else{mpEl.textContent=`${mp.pending||0} 待審`;mpEl.style.background='';mpEl.style.color=''}
+  var sp=countStatuses(svc.pages),mp=countStatuses(meta.pages);
+  var spEl=document.getElementById('service-pending'),mpEl=document.getElementById('meta-pending');
+  if((sp.pending||0)===0){spEl.textContent='全部完成 ✓';spEl.style.background='var(--approved-bg)';spEl.style.color='var(--approved)'}
+  else{spEl.textContent=(sp.pending||0)+' 待審';spEl.style.background='';spEl.style.color=''}
+  if((mp.pending||0)===0){mpEl.textContent='全部完成 ✓';mpEl.style.background='var(--approved-bg)';mpEl.style.color='var(--approved)'}
+  else{mpEl.textContent=(mp.pending||0)+' 待審';mpEl.style.background='';mpEl.style.color=''}
 }
 
 function renderProgress(svc,meta){
-  const sections=[{name:'服務落地頁文案',pages:svc.pages,link:'service-landing-copy.html'},{name:'風格分類 Meta 清單',pages:meta.pages,link:'style-meta-upgrade.html'}];
-  const tbody=document.getElementById('progress-tbody');tbody.innerHTML='';
-  sections.forEach(s=>{
-    const c=countStatuses(s.pages);const total=s.pages.length;
-    const done=(c.approved||0)+(c.deployed||0);const pct=total?Math.round(done/total*100):0;
-    const col=pct>=80?'#2e7d32':pct>=50?'#e65100':'#c62828';
-    const tr=document.createElement('tr');
-    tr.innerHTML=`<td><a href="${s.link}" style="color:var(--dark);font-weight:600;text-decoration:none">${s.name}</a></td><td style="font-weight:700;color:${col}">${pct}%</td><td><div class="prog-bar-wrap"><div class="prog-bar" style="width:${pct}%"></div></div></td><td><span class="pill pill-p">${c.pending||0}</span></td><td><span class="pill pill-a">${(c.approved||0)+(c.deployed||0)}</span></td><td><span class="pill pill-r">${c.revision||0}</span></td>`;
+  var sections=[
+    {name:'服務落地頁文案',pages:svc.pages,link:'service-landing-copy.html'},
+    {name:'風格分類 Meta 清單',pages:meta.pages,link:'style-meta-upgrade.html'}
+  ];
+  var tbody=document.getElementById('progress-tbody');tbody.innerHTML='';
+  sections.forEach(function(s){
+    var c=countStatuses(s.pages);var total=s.pages.length;
+    var done=(c.approved||0)+(c.deployed||0);var pct=total?Math.round(done/total*100):0;
+    var col=pct>=80?'#2e7d32':pct>=50?'#e65100':'#c62828';
+    var tr=document.createElement('tr');
+    tr.innerHTML='<td><a href="'+s.link+'" style="color:var(--dark);font-weight:600;text-decoration:none">'+escHtml(s.name)+'</a></td>'
+      +'<td style="font-weight:700;color:'+col+'">'+pct+'%</td>'
+      +'<td><div class="prog-bar-wrap"><div class="prog-bar" style="width:'+pct+'%"></div></div></td>'
+      +'<td><span class="pill pill-p">'+(c.pending||0)+'</span></td>'
+      +'<td><span class="pill pill-a">'+((c.approved||0)+(c.deployed||0))+'</span></td>'
+      +'<td><span class="pill pill-r">'+(c.revision||0)+'</span></td>';
     tbody.appendChild(tr);
   });
 }
 
 function renderTasks(data){
-  const user=Auth.get();const el=document.getElementById('tasks-list');
+  var user=Auth.get();var el=document.getElementById('tasks-list');
   if(!data.tasks||!data.tasks.length){el.innerHTML='<div class="no-data">目前沒有交辦事項</div>';return}
   el.innerHTML='';
-  data.tasks.forEach(t=>{
-    const isAssigned=!t.assignees||t.assignees.includes(user.name);
-    const prioClass=t.priority==='high'?'prio-high':t.priority==='medium'?'prio-med':'prio-low';
-    const prioLabel=t.priority==='high'?'🔴 緊急':t.priority==='medium'?'🟡 一般':'🟢 低';
-    const div=document.createElement('div');div.className='task-card';
+  data.tasks.forEach(function(t){
+    var isAssigned=!t.assignees||t.assignees.indexOf(user.name)>=0;
+    var prioClass=t.priority==='high'?'prio-high':t.priority==='medium'?'prio-med':'prio-low';
+    var prioLabel=t.priority==='high'?'🔴 緊急':t.priority==='medium'?'🟡 一般':'🟢 低';
+    var div=document.createElement('div');div.className='task-card';
     div.style.borderLeft=isAssigned?'4px solid var(--gold)':'4px solid var(--border)';
-    div.innerHTML=`<div class="task-hdr"><span class="prio ${prioClass}">${prioLabel}</span><span class="task-title">${escHtml(t.title)}</span><span class="sbadge ${t.status==='open'?'s-open':'s-done'}">${t.status==='open'?'進行中':'已完成'}</span></div><div class="task-body">${escHtml(t.content)}</div><div class="task-meta"><span>📅 ${t.created}</span><span>👤 指派：${(t.assignees||['全體']).join('、')}</span><span>✍️ ${t.author}</span>${Auth.isAdmin()&&t.status==='open'?`<button class="btn-close-task" onclick="closeTask('${t.id}')">✓ 標記完成</button>`:''}</div>`;
+    var closeBtn=Auth.isAdmin()&&t.status==='open'?'<button class="btn-close-task" onclick="closeTask(\''+t.id+'\')">✓ 標記完成</button>':'';
+    div.innerHTML='<div class="task-hdr"><span class="prio '+prioClass+'">'+prioLabel+'</span><span class="task-title">'+escHtml(t.title)+'</span><span class="sbadge '+(t.status==='open'?'s-open':'s-done')+'">'+(t.status==='open'?'進行中':'已完成')+'</span></div>'
+      +'<div class="task-body">'+escHtml(t.content)+'</div>'
+      +'<div class="task-meta"><span>📅 '+escHtml(t.created)+'</span><span>👤 指派：'+escHtml((t.assignees||['全體']).join('、'))+'</span><span>✍️ '+escHtml(t.author)+'</span>'+closeBtn+'</div>';
     el.appendChild(div);
   });
 }
 
-function toggleAddForm(){const f=document.getElementById('add-form');f.style.display=f.style.display==='block'?'none':'block'}
+function toggleAddForm(){var f=document.getElementById('add-form');f.style.display=f.style.display==='block'?'none':'block'}
 
 async function saveTask(){
-  const title=document.getElementById('new-title').value.trim();
-  const content=document.getElementById('new-content').value.trim();
+  var title=document.getElementById('new-title').value.trim();
+  var content=document.getElementById('new-content').value.trim();
   if(!title){toast('請輸入交辦事項標題','error');return}
-  const assignMap={all:['珮瑩','小芬'],peying:['珮瑩'],xiaofen:['小芬']};
-  const newTask={id:'task_'+Date.now(),created:new Date().toISOString().slice(0,10),author:'Kevin 主公',title,content,assignees:assignMap[document.getElementById('new-assign').value],status:'open',priority:document.getElementById('new-prio').value};
+  var assignMap={all:['珮瑩','小芬'],peying:['珮瑩'],xiaofen:['小芬']};
+  var newTask={id:'task_'+Date.now(),created:new Date().toISOString().slice(0,10),author:'Kevin 主公',title:title,content:content,assignees:assignMap[document.getElementById('new-assign').value],status:'open',priority:document.getElementById('new-prio').value};
   showLoading('儲存交辦事項…');
   try{
-    const data=await GH.read('_data/bulletin.json');
+    var data=await GH.read('_data/bulletin.json');
     data.tasks.unshift(newTask);
-    await GH.write('_data/bulletin.json',data,`Kevin 新增交辦：${title}`);
+    await GH.write('_data/bulletin.json',data,'Kevin 新增交辦：'+title);
     hideLoading();toast('交辦事項已儲存！');
     document.getElementById('add-form').style.display='none';
     document.getElementById('new-title').value='';document.getElementById('new-content').value='';
@@ -401,58 +494,138 @@ async function closeTask(taskId){
   if(!confirm('確定要將此交辦標記為已完成嗎？'))return;
   showLoading('更新中…');
   try{
-    const data=await GH.read('_data/bulletin.json');
-    const t=data.tasks.find(x=>x.id===taskId);if(t)t.status='done';
-    await GH.write('_data/bulletin.json',data,`Kevin 完成交辦：${t?t.title:taskId}`);
+    var data=await GH.read('_data/bulletin.json');
+    var t=data.tasks.filter(function(x){return x.id===taskId})[0];
+    if(t)t.status='done';
+    await GH.write('_data/bulletin.json',data,'Kevin 完成交辦：'+(t?t.title:taskId));
     hideLoading();toast('已標記為完成');renderTasks(data);
   }catch(e){hideLoading();toast('更新失敗','error')}
 }
 
 function updateNotifBadge(data){
-  const lastSeen=Auth.lastSeen();
-  const unread=(data.notifications||[]).filter(n=>new Date(n.timestamp).getTime()>lastSeen);
-  const badge=document.getElementById('notif-count');
+  var lastSeen=Auth.lastSeen();
+  var unread=(data.notifications||[]).filter(function(n){return new Date(n.timestamp).getTime()>lastSeen});
+  var badge=document.getElementById('notif-count');
   if(unread.length>0){badge.style.display='inline-flex';badge.textContent=unread.length;document.getElementById('mark-all-btn').style.display='block'}
   else{badge.style.display='none';document.getElementById('mark-all-btn').style.display='none'}
 }
 
 function renderNotifs(data){
-  const notifs=(data.notifications||[]).slice().reverse();
-  const lastSeen=Auth.lastSeen();const el=document.getElementById('notif-list');
+  var notifs=(data.notifications||[]).slice().reverse();
+  var lastSeen=Auth.lastSeen();var el=document.getElementById('notif-list');
   if(!notifs.length){el.innerHTML='<div class="no-data">目前沒有動態通知。<br>珮瑩或小芬儲存修改後，通知會顯示在這裡。</div>';return}
   el.innerHTML='';
-  notifs.slice(0,20).forEach(n=>{
-    const isUnread=new Date(n.timestamp).getTime()>lastSeen;
-    const div=document.createElement('div');div.className='notif-item'+(isUnread?' unread':'');
-    div.innerHTML=`<div class="notif-icon">${isUnread?'🔔':'📢'}</div><div style="flex:1"><div class="notif-text"><strong>${escHtml(n.user)}</strong> ${escHtml(n.message)}</div><div class="notif-time">${fmtTime(n.timestamp)}</div></div>`;
+  notifs.slice(0,20).forEach(function(n){
+    var isUnread=new Date(n.timestamp).getTime()>lastSeen;
+    var div=document.createElement('div');div.className='notif-item'+(isUnread?' unread':'');
+    div.innerHTML='<div class="notif-icon">'+(isUnread?'🔔':'📢')+'</div>'
+      +'<div style="flex:1"><div class="notif-text"><strong>'+escHtml(n.user)+'</strong> '+escHtml(n.message)+'</div>'
+      +'<div class="notif-time">'+fmtTime(n.timestamp)+'</div></div>';
     el.appendChild(div);
   });
 }
 
-function markAllRead(){Auth.touchSeen();toast('已標記全部為已讀');document.getElementById('notif-count').style.display='none';document.getElementById('mark-all-btn').style.display='none';document.querySelectorAll('.notif-item.unread').forEach(el=>{el.classList.remove('unread');const icon=el.querySelector('.notif-icon');if(icon)icon.textContent='📢'})}
+function markAllRead(){
+  Auth.touchSeen();toast('已標記全部為已讀');
+  document.getElementById('notif-count').style.display='none';
+  document.getElementById('mark-all-btn').style.display='none';
+  document.querySelectorAll('.notif-item.unread').forEach(function(el){
+    el.classList.remove('unread');
+    var icon=el.querySelector('.notif-icon');if(icon)icon.textContent='📢';
+  });
+}
 
 function renderHistory(data){
-  const el=document.getElementById('hist-list');
+  var el=document.getElementById('hist-list');
   if(!data||!data.length){el.innerHTML='<div class="no-data">尚無修改記錄。<br>珮瑩或小芬第一次儲存修改後，記錄就會出現這裡。</div>';return}
   el.innerHTML='';
-  [...data].reverse().slice(0,30).forEach(h=>{
-    const div=document.createElement('div');div.className='hist-item';
-    div.innerHTML=`<div class="h-avatar">${escHtml(h.avatar||h.user.charAt(0))}</div><div class="h-content"><div class="h-action"><strong>${escHtml(h.user)}</strong> 修改了「${escHtml(h.item_name)}」的 <strong>${escHtml(h.field_name)}</strong></div><div class="h-detail" style="margin-bottom:4px">📂 ${escHtml(h.section_name)} ▸ ${escHtml(h.page_name||'')}</div>${h.before?`<span class="diff-before">${escHtml(h.before.slice(0,80))}${h.before.length>80?'…':''}</span>`:''}${h.after?`<span class="diff-after">${escHtml(h.after.slice(0,80))}${h.after.length>80?'…':''}</span>`:''}<div class="h-time" style="margin-top:4px">${fmtTime(h.timestamp)}</div></div>`;
+  data.slice().reverse().slice(0,30).forEach(function(h){
+    var div=document.createElement('div');div.className='hist-item';
+    div.innerHTML='<div class="h-avatar">'+escHtml(h.avatar||h.user.charAt(0))+'</div>'
+      +'<div class="h-content"><div class="h-action"><strong>'+escHtml(h.user)+'</strong> 修改了「'+escHtml(h.item_name)+'」的 <strong>'+escHtml(h.field_name)+'</strong></div>'
+      +'<div class="h-detail" style="margin-bottom:4px">📂 '+escHtml(h.section_name)+' ▸ '+escHtml(h.page_name||'')+'</div>'
+      +(h.before?'<span class="diff-before">'+escHtml(h.before.slice(0,80))+(h.before.length>80?'…':'')+'</span>':'')
+      +(h.after?'<span class="diff-after">'+escHtml(h.after.slice(0,80))+(h.after.length>80?'…':'')+'</span>':'')
+      +'<div class="h-time" style="margin-top:4px">'+fmtTime(h.timestamp)+'</div></div>';
     el.appendChild(div);
   });
 }
 
 function renderAdmin(users){
-  const tbody=document.getElementById('user-tbody');tbody.innerHTML='';
-  Object.entries(users).forEach(([key,u])=>{
-    const tr=document.createElement('tr');
-    tr.innerHTML=`<td style="font-family:monospace;color:#666">${key}</td><td>${escHtml(u.name)}</td><td class="${u.role==='admin'?'role-admin':'role-editor'}">${u.role==='admin'?'👑 管理員':'✏️ 編輯者'}</td><td><span class="pw-cell" id="pw-${key}">${escHtml(u.password)}</span></td><td><button class="reset-pw" onclick="editPw('${key}','${escHtml(u.password)}')">修改密碼</button></td>`;
+  var tbody=document.getElementById('user-tbody');tbody.innerHTML='';
+  Object.keys(users).forEach(function(key){
+    var u=users[key];
+    var tr=document.createElement('tr');
+    tr.innerHTML='<td style="font-family:monospace;color:#666">'+escHtml(key)+'</td>'
+      +'<td>'+escHtml(u.name)+'</td>'
+      +'<td class="'+(u.role==='admin'?'role-admin':'role-editor')+'">'+(u.role==='admin'?'👑 管理員':'✏️ 編輯者')+'</td>'
+      +'<td><span class="pw-cell" id="pw-'+escHtml(key)+'">'+escHtml(u.password)+'</span></td>'
+      +'<td><button class="reset-pw" onclick="editPw(\''+escHtml(key)+'\',\''+escHtml(u.password)+'\')">修改密碼</button></td>';
     tbody.appendChild(tr);
   });
 }
 
-let _pwTarget=null,_pwCurrent=null;
+// 密碼修改 Modal
+var _pwTarget=null,_pwCurrent=null;
 function editPw(key,currentPw){
   _pwTarget=key;_pwCurrent=currentPw;
-  document.getElementById('pw-modal-label').textContent=`修改「${key}」的密碼（目前：${currentPw}）`;
-  document.getElementById('pw-modal-input')
+  document.getElementById('pw-modal-label').textContent='修改「'+key+'」的密碼（目前：'+currentPw+'）';
+  document.getElementById('pw-modal-input').value='';
+  document.getElementById('pw-modal').classList.add('show');
+  setTimeout(function(){document.getElementById('pw-modal-input').focus()},150);
+}
+function closePwModal(){document.getElementById('pw-modal').classList.remove('show');_pwTarget=null;_pwCurrent=null}
+async function confirmPwChange(){
+  var newPw=document.getElementById('pw-modal-input').value.trim();
+  if(!newPw){toast('請輸入新密碼','error');return}
+  if(newPw===_pwCurrent){toast('新密碼與舊密碼相同','error');return}
+  var key=_pwTarget;closePwModal();
+  showLoading('更新密碼…');
+  try{
+    var users=await GH.read('_data/users.json');
+    users[key].password=newPw;
+    await GH.write('_data/users.json',users,'Kevin 修改用戶密碼：'+key);
+    hideLoading();toast('密碼已更新');
+    var el=document.getElementById('pw-'+key);if(el)el.textContent=newPw;
+  }catch(e){hideLoading();toast('更新失敗：'+e.message,'error')}
+}
+
+async function bootApp(){
+  var user=Auth.get();if(!user)return;
+  document.getElementById('login-screen').style.display='none';
+  document.getElementById('app').style.display='block';
+  document.getElementById('hdr-user').textContent=user.name;
+  if(Auth.isAdmin()){
+    document.getElementById('add-task-btn').style.display='block';
+    document.getElementById('admin-sec').style.display='block';
+  }
+  showLoading('讀取專案資料…');
+  try{
+    var results=await Promise.all([
+      GH.read('_data/bulletin.json'),
+      GH.read('_data/history.json'),
+      GH.read('_data/content-service.json'),
+      GH.read('_data/content-meta.json'),
+      Auth.isAdmin()?GH.read('_data/users.json'):Promise.resolve(null)
+    ]);
+    var bulletin=results[0],history=results[1],svcData=results[2],metaData=results[3],users=results[4];
+    hideLoading();
+    renderStats(svcData,metaData);
+    renderProgress(svcData,metaData);
+    renderTasks(bulletin);
+    renderNotifs(bulletin);
+    renderHistory(history);
+    updateNotifBadge(bulletin);
+    if(Auth.isAdmin()&&users)renderAdmin(users);
+  }catch(e){
+    hideLoading();
+    toast('讀取資料失敗：'+e.message,'error',5000);
+    console.error(e);
+  }
+}
+
+// 啟動：若已登入則直接進入
+(function(){var user=Auth.get();if(user)bootApp()})();
+</script>
+</body>
+</html>
