@@ -1,0 +1,19 @@
+{
+  "name": "滿屋設計 SEO 審核平台",
+  "short_name": "滿屋SEO",
+  "description": "滿屋設計 SEO 協作審核平台",
+  "start_url": "/joyhouse-seo-docs/",
+  "scope": "/joyhouse-seo-docs/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#1a1a1a",
+  "theme_color": "#c8a96e",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
