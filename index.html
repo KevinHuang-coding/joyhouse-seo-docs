@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>滿屋設計｜SEO 專案文件中心</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Microsoft JhengHei", "PingFang TC", sans-serif;
+    background: #faf8f5;
+    color: #333;
+    min-height: 100vh;
+  }
+  header {
+    background: #2c2c2c;
+    color: white;
+    padding: 28px 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  header h1 { font-size: 22px; font-weight: 700; }
+  header p { font-size: 13px; color: #aaa; margin-top: 4px; }
+  .logo {
+    font-size: 28px;
+    background: #c8a96e;
+    width: 48px; height: 48px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .container { max-width: 960px; margin: 0 auto; padding: 40px 24px; }
+  .section-title {
+    font-size: 13px;
+    font-weight: bold;
+    color: #c8a96e;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 16px;
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+  .card {
+    background: white;
+    border: 1px solid #e8e0d5;
+    border-radius: 10px;
+    padding: 22px 24px;
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow 0.2s, transform 0.2s;
+    display: block;
+  }
+  .card:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.10);
+    transform: translateY(-2px);
+  }
+  .card-tag {
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  .tag-copy { background: #fff0d6; color: #b07a00; }
+  .tag-meta { background: #e8f4ff; color: #0066cc; }
+  .tag-master { background: #f0fff4; color: #2e7d32; }
+  .tag-seo { background: #fce4ec; color: #c62828; }
+  .card h3 { font-size: 16px; color: #2c2c2c; margin-bottom: 6px; }
+  .card p { font-size: 13px; color: #777; line-height: 1.6; }
+  .card .meta { font-size: 12px; color: #bbb; margin-top: 12px; }
+  .card .arrow { float: right; color: #c8a96e; font-size: 18px; }
+  .status-bar {
+    background: white;
+    border: 1px solid #e8e0d5;
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 40px;
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .stat { text-align: center; }
+  .stat .num { font-size: 28px; font-weight: 700; color: #c8a96e; }
+  .stat .label { font-size: 12px; color: #999; margin-top: 2px; }
+  .collab-box {
+    background: #f0f7ff;
+    border: 1px solid #b8d8f8;
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 40px;
+  }
+  .collab-box h3 { font-size: 15px; color: #1a5fa8; margin-bottom: 8px; }
+  .collab-box p { font-size: 13px; color: #555; line-height: 1.7; }
+  .collab-box code {
+    background: #e0eeff;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 12px;
+    color: #1a5fa8;
+  }
+  footer {
+    text-align: center;
+    font-size: 12px;
+    color: #bbb;
+    padding: 24px;
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">滿</div>
+  <div>
+    <h1>滿屋設計｜SEO 專案文件中心</h1>
+    <p>joyhouse-rental.com · 由軍師維護 · 最後更新：2026-05-07</p>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- 狀態列 -->
+  <div class="status-bar">
+    <div class="stat"><div class="num">95</div><div class="label">SEO Engine 分數 / 100</div></div>
+    <div class="stat"><div class="num">75</div><div class="label">良好頁面數</div></div>
+    <div class="stat"><div class="num">2,592</div><div class="label">已優化圖片 Alt</div></div>
+    <div class="stat"><div class="num">300+</div><div class="label">ImageObject Schema 頁面</div></div>
+    <div class="stat"><div class="num">100</div><div class="label">GEO 就緒度（AI 搜尋）</div></div>
+  </div>
+
+  <!-- 協作說明 -->
+  <div class="collab-box">
+    <h3>📝 珮瑩 / 小芬：如何編輯文件？</h3>
+    <p>
+      每份報告旁邊都有對應的 <code>.md</code> 原始檔（Markdown 格式）。<br>
+      點進任一 <code>.md</code> 檔 → 右上角鉛筆圖示「Edit this file」→ 直接修改文字 → 底部「Commit changes」儲存即可。<br>
+      <strong>不需要安裝任何軟體，瀏覽器就能改。</strong>修改後頁面會在 1–2 分鐘內自動更新。
+    </p>
+  </div>
+
+  <!-- Phase 2 文件 -->
+  <div class="section-title">Phase 2：服務落地頁優化</div>
+  <div class="cards">
+    <a class="card" href="滿屋_服務落地頁文案草稿_20260507.html">
+      <span class="card-tag tag-copy">文案草稿</span>
+      <span class="arrow">→</span>
+      <h3>6 大服務落地頁文案</h3>
+      <p>婚禮 / 商業 / 記者會 / 開幕 / 尾牙春酒 / 聖誕新年，每頁含 SEO Title、Meta、H1、正文、CTA</p>
+      <div class="meta">2026-05-07 · 待珮瑩確認 · 確認後部署</div>
+    </a>
+    <a class="card" href="滿屋_22風格分類頁Meta升級_20260507.html">
+      <span class="card-tag tag-meta">Meta 升級</span>
+      <span class="arrow">→</span>
+      <h3>22 風格分類頁 Meta 升級</h3>
+      <p>每頁加入「風格 × 活動類型」組合詞，附部署優先順序（P1 / P2 / P3）</p>
+      <div class="meta">2026-05-07 · 確認後批次 REST API 寫入</div>
+    </a>
+  </div>
+
+  <!-- Phase 3（已完成） -->
+  <div class="section-title">Phase 3：Schema 強化（已完成 ✅）</div>
+  <div class="cards">
+    <a class="card" href="https://www.joyhouse-rental.com/victoria-hotel-sea-mist-wedding-deco/" target="_blank">
+      <span class="card-tag tag-seo">已上線</span>
+      <span class="arrow">↗</span>
+      <h3>ImageObject + CreativeWork Schema</h3>
+      <p>全站 300+ work 頁自動注入，觸發 Google Image Pack 多縮圖曝光。預計 2–6 週後 Search Console 可見。</p>
+      <div class="meta">2026-05-07 完成 · Code Snippets ID=5</div>
+    </a>
+    <a class="card" href="https://www.joyhouse-rental.com/wedding/" target="_blank">
+      <span class="card-tag tag-seo">已上線</span>
+      <span class="arrow">↗</span>
+      <h3>BreadcrumbList Schema 修復</h3>
+      <p>修復 GSC CRITICAL 錯誤，補上 item.@type=WebPage，全站永久套用。</p>
+      <div class="meta">2026-05-07 完成 · WPCode ID=8683</div>
+    </a>
+  </div>
+
+  <!-- 下一步 -->
+  <div class="section-title">待辦事項（本月優先）</div>
+  <div class="cards">
+    <div class="card" style="border-style:dashed; cursor:default;">
+      <span class="card-tag tag-copy">待部署</span>
+      <h3>服務落地頁 × 6</h3>
+      <p>珮瑩確認文案 → 軍師用 Elementor 補進各對應頁面頂部</p>
+      <div class="meta">預估影響力 ⭐⭐⭐⭐⭐</div>
+    </div>
+    <div class="card" style="border-style:dashed; cursor:default;">
+      <span class="card-tag tag-meta">待部署</span>
+      <h3>22 風格分類頁 Meta</h3>
+      <p>確認後批次 REST API 寫入，P1 優先（浪漫典雅 / 華麗風 / 尾牙 / 春酒）</p>
+      <div class="meta">預估影響力 ⭐⭐⭐⭐</div>
+    </div>
+    <div class="card" style="border-style:dashed; cursor:default;">
+      <span class="card-tag tag-seo">待執行</span>
+      <h3>外部平台上架</h3>
+      <p>weddings.tw / WeddingDay / PRO360 刊登滿屋設計服務資訊</p>
+      <div class="meta">預估影響力 ⭐⭐⭐⭐</div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  滿屋設計 SEO 專案文件中心 · kevinhuang-coding.github.io/joyhouse-seo-docs · 軍師維護
+</footer>
+
+</body>
+</html>
