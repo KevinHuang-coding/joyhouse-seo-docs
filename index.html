@@ -124,6 +124,17 @@ body{font-family:"Microsoft JhengHei","PingFang TC",sans-serif;background:var(--
 .toast{position:fixed;bottom:24px;right:24px;background:#2c2c2c;color:#fff;padding:12px 20px;border-radius:10px;font-size:13px;z-index:10000;display:none;max-width:320px;line-height:1.5}
 .toast.success{background:#2e7d32}
 .toast.error{background:#c62828}
+.modal-mask{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:8000;display:none;align-items:center;justify-content:center}
+.modal-mask.show{display:flex}
+.modal-box{background:#fff;border-radius:16px;padding:28px 28px 22px;width:90%;max-width:380px;box-shadow:0 16px 48px rgba(0,0,0,.3)}
+.modal-box h3{font-size:15px;font-weight:700;margin-bottom:6px;color:#2c2c2c}
+.modal-box p{font-size:12px;color:#888;margin-bottom:16px}
+.modal-box input{width:100%;padding:11px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:15px;font-family:inherit;outline:none;transition:border-color .2s;margin-bottom:14px}
+.modal-box input:focus{border-color:var(--gold)}
+.modal-btns{display:flex;gap:10px}
+.modal-btns .btn-ok{flex:1;background:var(--dark);color:#fff;border:none;padding:11px;border-radius:8px;font-size:14px;cursor:pointer;font-family:inherit;font-weight:600}
+.modal-btns .btn-ok:hover{background:#444}
+.modal-btns .btn-cx{background:none;border:1px solid #ccc;padding:11px 16px;border-radius:8px;font-size:14px;cursor:pointer;font-family:inherit}
 .page-nav{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:32px}
 .page-nav a{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:16px 20px;text-decoration:none;color:inherit;transition:box-shadow .2s,transform .2s}
 .page-nav a:hover{box-shadow:0 4px 16px rgba(0,0,0,.1);transform:translateY(-2px)}
@@ -166,6 +177,18 @@ body{font-family:"Microsoft JhengHei","PingFang TC",sans-serif;background:var(--
     </div>
     <button class="btn-login" onclick="doLogin()">登　入</button>
     <div class="l-err" id="l-err">帳號或密碼錯誤，請重試</div>
+  </div>
+</div>
+
+<div class="modal-mask" id="pw-modal">
+  <div class="modal-box">
+    <h3>🔐 修改密碼</h3>
+    <p id="pw-modal-label">請輸入新密碼</p>
+    <input type="text" id="pw-modal-input" placeholder="新密碼" autocomplete="off">
+    <div class="modal-btns">
+      <button class="btn-cx" onclick="closePwModal()">取消</button>
+      <button class="btn-ok" onclick="confirmPwChange()">確認修改</button>
+    </div>
   </div>
 </div>
 
@@ -428,35 +451,8 @@ function renderAdmin(users){
   });
 }
 
-async function editPw(key,currentPw){
-  const newPw=prompt(`修改「${key}」的密碼（目前：${currentPw}）：`);
-  if(!newPw||newPw===currentPw)return;
-  showLoading('更新密碼…');
-  try{
-    const users=await GH.read('_data/users.json');
-    users[key].password=newPw;
-    await GH.write('_data/users.json',users,`Kevin 修改用戶密碼：${key}`);
-    hideLoading();toast('密碼已更新');document.getElementById('pw-'+key).textContent=newPw;
-  }catch(e){hideLoading();toast('更新失敗：'+e.message,'error')}
-}
-
-async function bootApp(){
-  const user=Auth.get();if(!user)return;
-  document.getElementById('login-screen').style.display='none';
-  document.getElementById('app').style.display='block';
-  document.getElementById('hdr-user').textContent=user.name;
-  if(Auth.isAdmin()){document.getElementById('add-task-btn').style.display='block';document.getElementById('admin-sec').style.display='block'}
-  showLoading('讀取專案資料…');
-  try{
-    const [bulletin,history,svcData,metaData,users]=await Promise.all([GH.read('_data/bulletin.json'),GH.read('_data/history.json'),GH.read('_data/content-service.json'),GH.read('_data/content-meta.json'),Auth.isAdmin()?GH.read('_data/users.json'):Promise.resolve(null)]);
-    hideLoading();
-    renderStats(svcData,metaData);renderProgress(svcData,metaData);renderTasks(bulletin);renderNotifs(bulletin);renderHistory(history);updateNotifBadge(bulletin);
-    if(Auth.isAdmin()&&users)renderAdmin(users);
-  }catch(e){hideLoading();toast('讀取資料失敗：'+e.message,'error',5000);console.error(e)}
-}
-
-(function(){const user=Auth.get();if(user){document.getElementById('login-screen').style.display='none';bootApp()}})();
-</script>
-</body>
-</html>
-                                              
+let _pwTarget=null,_pwCurrent=null;
+function editPw(key,currentPw){
+  _pwTarget=key;_pwCurrent=currentPw;
+  document.getElementById('pw-modal-label').textContent=`修改「${key}」的密碼（目前：${currentPw}）`;
+  document.getElementById('pw-modal-input')
