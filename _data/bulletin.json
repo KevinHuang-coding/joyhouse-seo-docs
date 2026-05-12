@@ -6,7 +6,10 @@
       "author": "Kevin 主公",
       "title": "請審閱 6 大服務落地頁文案",
       "content": "軍師已完成婚禮、商業、記者會、開幕、尾牙春酒、聖誕新年共 6 大服務落地頁文案草稿。請進入「服務落地頁文案」頁面逐一確認：①婚禮相關用詞是否符合台灣業界習慣 ②尾牙春酒的文字是否夠接地氣 ③CTA 按鈕文案是否能打動客戶。確認或建議修改後請標記各頁狀態。",
-      "assignees": ["珮瑩", "小芬"],
+      "assignees": [
+        "珮瑩",
+        "小芬"
+      ],
       "status": "open",
       "priority": "high"
     },
@@ -16,10 +19,20 @@
       "author": "Kevin 主公",
       "title": "請審閱 22 風格分類頁 Meta 描述",
       "content": "軍師已完成 22 個風格分類頁的 SEO Title 與 Meta Description 升級。請進入「風格 Meta 清單」頁面確認：①關鍵字是否符合客戶搜尋習慣 ②文字是否自然、不像 AI 寫的。P1 優先（浪漫典雅、華麗風、尾牙、春酒）。",
-      "assignees": ["珮瑩", "小芬"],
+      "assignees": [
+        "珮瑩",
+        "小芬"
+      ],
       "status": "open",
       "priority": "medium"
     }
   ],
-  "notifications": []
+  "notifications": [
+    {
+      "id": "n_1778583562841",
+      "timestamp": "2026-05-12T10:59:22.841Z",
+      "user": "小芬",
+      "message": "修改了「婚禮佈置服務頁」的 SEO 標題"
+    }
+  ]
 }
