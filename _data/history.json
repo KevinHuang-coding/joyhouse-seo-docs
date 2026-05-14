@@ -196,8 +196,8 @@
     "after": "遊樂園風活動佈置｜尾牙・畢業舞會・主題婚禮．生日派對｜滿屋設計"
   },
   {
-    "id": "h_1778766992938",
-    "timestamp": "2026-05-14T13:56:32.938Z",
+    "id": "h_1778767000413",
+    "timestamp": "2026-05-14T13:56:40.413Z",
     "user": "Kevin 主公",
     "avatar": "K",
     "username": "kevin",
@@ -207,6 +207,6 @@
     "field": "status",
     "field_name": "審閱狀態",
     "before": "pending",
-    "after": "revision"
+    "after": "approved"
   }
 ]
